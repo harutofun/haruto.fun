@@ -1,0 +1,112 @@
+<!-------------------------------------------------------- ALL HOME WIDGETS ---------->
+<div id="home_widgets">
+    <!-------------------------------------------------------- BLUESKY --------------->
+    <div id="bluesky" style="width: 350px; height: 200px; overflow: hidden; position: absolute; top: -50px; left: 200px;">
+        <script src="https://cdn.jsdelivr.net/npm/bsky-embed@0.0.5/dist/bsky-embed.es.js" async="async" ></script>
+        <bsky-embed  
+            username="haruto.fun"
+            limit="1"
+        >  
+        </bsky-embed>
+    </div>
+
+
+    <!-------------------------------------------------------- NEW MII -------------------->
+    <div id="characterWidget">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s1600/Sprite-0001.gif" alt="Personagem" id="characterGif" />
+    </div>
+    
+    <script>
+        const gifElement = document.getElementById('characterGif');
+        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4CBkKnrXiZC_rs84P8nexunH9gDLM8qf8reRDAu3aYJyeZWGqpHBHXEwpxg6kGoloEYcBb2puFUJN/pub?output=csv'; // URL do CSV
+        
+        // Lista de GIFs para randomização
+        const randomGifs = [
+          'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s1600/Sprite-0001.gif',
+          'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUxKjOeQer9TpjKnJXhByFNdrLG1bpv-M-P1RT8TZ8riETMcz-eEOKwcw3dtjfSkDXFbGbasR1B7Z_WsxKSwAC4vicIRPn9whlCZJr6G1yI63xug2VeOyFBrT3LHICHdKb8JsG6kCVSzV-fprmh1DA0oCWQErQjtEANFxEUxPEDk6OaKhsITJ2EI0dPdBD/s1600/mold.gif'
+        ];
+    
+        // Função para carregar o GIF com base na tag ou aleatoriamente
+        async function loadGif() {
+          try {
+            const response = await fetch(csvUrl);
+            const csvText = await response.text();
+            const rows = csvText.split('\n');
+            const data = rows.map(row => row.split(','));
+    
+            // Variável para armazenar a tag
+            let tag = '';
+    
+            // Itera sobre as linhas do CSV para encontrar a tag associada à "ACTIVE!"
+            for (let i = 0; i < data.length; i++) {
+              // Verifica se a primeira coluna contém "ACTIVE!"
+              if (data[i][0] && data[i][0].toLowerCase() === 'active!') {
+                tag = data[i][1]; // A tag está na segunda coluna (índice 1)
+                break; // Sai do loop após encontrar a tag
+              }
+            }
+
+            // Verifica se a tag foi encontrada e altera o GIF com base na tag
+            if (tag) {
+              switch (tag) {
+                case 'Art':
+                  gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif';
+                  break;
+                case 'Code':
+                  gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif';
+                  break;
+                case 'Music':
+                  gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif';
+                  break;
+                default:
+                  gifElement.src = randomGifs[Math.floor(Math.random() * randomGifs.length)];
+              }
+            } else {
+              // Randomiza o GIF se não houver task "ACTIVE!"
+              gifElement.src = randomGifs[Math.floor(Math.random() * randomGifs.length)];
+            }
+          } catch (error) {
+            console.error('Erro ao carregar o GIF:', error);
+            gifElement.src = randomGifs[Math.floor(Math.random() * randomGifs.length)];
+          }
+        }
+        
+        // Chama a função para carregar o GIF ao abrir a página
+        loadGif();
+    </script>
+    
+    <style>
+        /* Estilização do widget */
+        #characterWidget {
+          top: 200px; /* Ajuste conforme necessário */
+          left: 20px; /* Ajuste conforme necessário */
+          z-index: 1000; /* Coloca o gif acima de outros elementos */
+        }
+    
+        #characterGif {
+          /* Configurações do GIF */
+          top: 200px; /* Ajuste conforme necessário */
+          left: 20px; /* Ajuste conforme necessário */
+          z-index: 1000; /* Coloca o gif acima de outros elementos */
+        }
+    </style>
+    
+  
+  
+
+
+
+
+
+
+</div>
+
+<!-- HOME PAGE -->
+<script>
+    var urlAtual = window.location.href;
+    if (urlAtual === "https://secretblogveryhidden.blogspot.com/") { //home page
+        document.getElementById("home_widgets").style.display = "block";
+    } else { //other pages
+        document.getElementById("home_widgets").style.display = "none";
+    }
+</script>
