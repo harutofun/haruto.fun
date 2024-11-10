@@ -20,13 +20,13 @@
         const gifElement = document.getElementById('characterGif');
         const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4CBkKnrXiZC_rs84P8nexunH9gDLM8qf8reRDAu3aYJyeZWGqpHBHXEwpxg6kGoloEYcBb2puFUJN/pub?output=csv'; // URL do CSV
         
-        // Lista de GIFs para randomização
+        // GIFS TO BE RANDOMIZED YAY
         const randomGifs = [
           'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s1600/Sprite-0001.gif',
           'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUxKjOeQer9TpjKnJXhByFNdrLG1bpv-M-P1RT8TZ8riETMcz-eEOKwcw3dtjfSkDXFbGbasR1B7Z_WsxKSwAC4vicIRPn9whlCZJr6G1yI63xug2VeOyFBrT3LHICHdKb8JsG6kCVSzV-fprmh1DA0oCWQErQjtEANFxEUxPEDk6OaKhsITJ2EI0dPdBD/s1600/mold.gif'
         ];
     
-        // Função para carregar o GIF com base na tag ou aleatoriamente
+        // LOAD BASED ON TAG OR RANDOMIZED GIF
         async function loadGif() {
           try {
             const response = await fetch(csvUrl);
@@ -34,19 +34,19 @@
             const rows = csvText.split('\n');
             const data = rows.map(row => row.split(','));
     
-            // Variável para armazenar a tag
+            // store tag
             let tag = '';
     
-            // Itera sobre as linhas do CSV para encontrar a tag associada à "ACTIVE!"
+            // integer??? to find the ACTIVE! word i guess
             for (let i = 0; i < data.length; i++) {
-              // Verifica se a primeira coluna contém "ACTIVE!"
+              // verify if the furst column has "ACTIVE!"
               if (data[i][0] && data[i][0].toLowerCase() === 'active!') {
-                tag = data[i][1]; // A tag está na segunda coluna (índice 1)
-                break; // Sai do loop após encontrar a tag
+                tag = data[i][1]; // tag is in the second line 
+                break; // close look after finding
               }
             }
 
-            // Verifica se a tag foi encontrada e altera o GIF com base na tag
+            // verify if the tag found, otherwise go to random
             if (tag) {
               switch (tag) {
                 case 'Art':
@@ -62,7 +62,7 @@
                   gifElement.src = randomGifs[Math.floor(Math.random() * randomGifs.length)];
               }
             } else {
-              // Randomiza o GIF se não houver task "ACTIVE!"
+              // randomize if there's no task "ACTIVE!"
               gifElement.src = randomGifs[Math.floor(Math.random() * randomGifs.length)];
             }
           } catch (error) {
@@ -71,23 +71,23 @@
           }
         }
         
-        // Chama a função para carregar o GIF ao abrir a página
+        // call the function after loading the page
         loadGif();
     </script>
     
     <style>
-        /* Estilização do widget */
+        /* WIDGET STYLE */
         #characterWidget {
-          top: 200px; /* Ajuste conforme necessário */
-          left: 20px; /* Ajuste conforme necessário */
-          z-index: 1000; /* Coloca o gif acima de outros elementos */
+          top: 200px; 
+          left: 20px; 
+          z-index: 1000; /* depth */
         }
     
         #characterGif {
-          /* Configurações do GIF */
-          top: 200px; /* Ajuste conforme necessário */
-          left: 20px; /* Ajuste conforme necessário */
-          z-index: 1000; /* Coloca o gif acima de outros elementos */
+          /* GIF STYLE */
+          top: 200px; 
+          left: 20px; 
+          z-index: 1000; /* depth? */
         }
     </style>
     
