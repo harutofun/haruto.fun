@@ -2,20 +2,30 @@
 <!DOCTYPE html>
 <!-- Google tag (gtag.js) --><html b:version='2' class='v2' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
+    
+    <!-- GO TO LINKTREE ON PHONE -->
     <script>
     if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
       window.location.href = &quot;https://linktr.ee/haruto.fun&quot;; 
     }
 </script>
+    
+    <!-- SET FONT -->
+    <link href='https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&amp;display=swap' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com/css2?family=Jersey+10&amp;family=Pixelify+Sans:wght@400..700&amp;display=swap' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com/css2?family=Jersey+10&amp;family=Pixelify+Sans:wght@400..700&amp;family=VT323&amp;display=swap' rel='stylesheet'/>
+    
+    
     <!-- Google tag (gtag.js) -->
 <script async='async' src='https://www.googletagmanager.com/gtag/js?id=G-SYM87QKWQL'/>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag(&#39;js&#39;, new Date());
-
   gtag(&#39;config&#39;, &#39;G-SYM87QKWQL&#39;);
 </script>
+    
+    
     <meta content='no-cache, no-store, must-revalidate' http-equiv='Cache-Control'/>
 	<meta content='no-cache' http-equiv='Pragma'/>
 	<meta content='0' http-equiv='Expires'/>
@@ -70,8 +80,8 @@ URL:      tinachen.org
 
    <Group description="Tabs Background" selector=".tabs-outer .PageList">
      <Variable name="tabs.background.color" description="Background Color" type="color" default="#000000" value="#000000"/>
-     <Variable name="tabs.selected.background.color" description="Selected Color" type="color" default="#000000" value="transparent"/>
-     <Variable name="tabs.border.color" description="Border Color" type="color" default="$(widget.border.color)" value="transparent"/>
+     <Variable name="tabs.selected.background.color" description="Selected Color" type="color" default="#000000" value="#000000"/>
+     <Variable name="tabs.border.color" description="Border Color" type="color" default="$(widget.border.color)" value="#000000"/>
    </Group>
 
    <Group description="Date Header" selector=".main-inner .widget h2.date-header, .main-inner .widget h2.date-header span">
@@ -123,8 +133,8 @@ URL:      tinachen.org
    </Group>
 
    <Group description="Images" selector=".main-inner">
-     <Variable name="image.background.color" description="Background Color" type="color" default="transparent" value="transparent"/>
-     <Variable name="image.border.color" description="Border Color" type="color" default="transparent" value="transparent"/>
+     <Variable name="image.background.color" description="Background Color" type="color" default="transparent" value="#000000"/>
+     <Variable name="image.border.color" description="Border Color" type="color" default="transparent" value="#000000"/>
    </Group>
 
    <Group description="Feed" selector=".blog-feeds">
@@ -150,7 +160,7 @@ URL:      tinachen.org
 
    <Variable name="body.background" description="Body Background" type="background"
        color="$(body.background.color)"
-       default="$(color) none repeat scroll top left" value="#000000 url(https://blogger.googleusercontent.com/img/a/AVvXsEjmtmULyF0cVh5ouDVEgc9TAT1Oj3OPF2q2gbQ84zzDobcihQGnHUb_vmX4wUTWSgKjY2weJY0waiIuPNeyiNg1bHveqHc_MY6o81BqpSNBQJ2SImB37zHS5-0SXK8fus07--5HxkIkNqqmKatt4KiAuula1-Mj0aDrpiAHwyYRfRxOUpAcNGl60USf9Ps2=s1600) repeat fixed top left"/>
+       default="$(color) none repeat scroll top left" value="#000000 url(https://blogger.googleusercontent.com/img/a/AVvXsEi-zDOJE8L1VzMQsCZWo43tpG3B1rOFOilgPZ36SULa10ThfSFlOmHwnNw0ldc_qq8IAdQIRE-kBfMrYkk6WBHMiDhEZaucfWeUxt4BT7LFBR3LaAsBF5GD_O_WxCF0xcilRJCO2Cme9FrwTZX5uaKsQg0EjxVu5jyyS9v1k5t7YsxcObAcSP5J-rDcwi8q=s1600) repeat fixed top left"/>
    <Variable name="body.background.gradient.cap" description="Body Gradient Cap" type="url"
        default="none" value="none"/>
    <Variable name="body.background.size" description="Body Background Size" type="string" default="auto" value="100% auto"/>
@@ -938,6 +948,73 @@ body.mobile {
 .mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
   border-$startSide: 1px solid $(tabs.border.color);
 }
+
+.main-inner .widget .widget-content {
+    font-family: 'VT323', sans-serif;
+}
+.main-inner .widget h2 {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.whitespace-pre-wrap {
+    font-family: 'Pixelify Sans', sans-serif !important;
+}
+
+.footer-outer {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.post-body {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.sidebar .widget {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.main-inner .widget h2.date-header {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.main-inner .widget h2.date-header span {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.post-footer-line>*:first-child {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.post-footer-line>*:last-child {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+.post-footer-line>* {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+h3.post-title a {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.tabs-inner .widget li:last-child a {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.tabs-inner .widget li a {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.widget {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.content {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.footer-inner .widget h2 {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
 ]]></b:skin>
 
     <b:template-skin>
@@ -1126,13 +1203,13 @@ head.appendChild(script);
       <b:section class='header' id='header' maxwidgets='1' name='Header' showaddelement='no'>
         <b:widget id='Header1' locked='true' title='haruto (Header)' type='Header'>
           <b:widget-settings>
-            <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEj84rDYxDnJv3H6Rd5NduYgHDzw7bo4EMuvqpzqxxuJcqHo9Bu3DsjxBi1LNOKcEff6opiJV__9ad2vaKP6n6EVOsvBjgd2oUAk33Fd2foiBN-NAjgeexDxoZ4-0j6G3e-KQAn_rQ2B7S8L3aiQVRzCeuIF_JkZPwmr8hf4pl6MI4u4beIxyL4k97loTjF_=s520</b:widget-setting>
-            <b:widget-setting name='displayHeight'>125</b:widget-setting>
-            <b:widget-setting name='sectionWidth'>860</b:widget-setting>
+            <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEh4FsmeBrBrzkr7hTC3sd3Q5JyjiIQrAXsIPG_OuYKgioDHpvB6FAFYscX3x-XFW6AXsS27bA1GJL-sn0NDKVdHRAzoNBppfTWuTmClpYMH_HbMnLZrHb1PLkylT6U_jvwNxIHEuEQJOEfrhwrxcsaVcyJsfL9j9juYiQ4LwOQZSVJGo_dLkKIbtMT6lYya=s500</b:widget-setting>
+            <b:widget-setting name='displayHeight'>140</b:widget-setting>
+            <b:widget-setting name='sectionWidth'>877</b:widget-setting>
             <b:widget-setting name='useImage'>true</b:widget-setting>
             <b:widget-setting name='shrinkToFit'>true</b:widget-setting>
             <b:widget-setting name='imagePlacement'>REPLACE</b:widget-setting>
-            <b:widget-setting name='displayWidth'>520</b:widget-setting>
+            <b:widget-setting name='displayWidth'>500</b:widget-setting>
           </b:widget-settings>
           <b:includable id='main'>
 
@@ -1221,7 +1298,7 @@ head.appendChild(script);
       <b:section class='tabs' id='crosscol' maxwidgets='1' name='Cross-Column' showaddelement='yes'>
         <b:widget id='PageList2' locked='false' title='PAGES' type='PageList'>
           <b:widget-settings>
-            <b:widget-setting name='pageListJson'><![CDATA[{"link1":{"href":"https://harutobessa.blogspot.com/p/status_8.html","position":1,"title":"STATUS"},"link0":{"href":"http://harutobessa.blogspot.com/","position":0,"title":"HOME"},"link5":{"href":"https://harutobessa.blogspot.com/p/qna.html","position":5,"title":"QNA"},"link4":{"href":"https://harutobessa.blogspot.com/p/about-me.html","position":4,"title":"ABOUT ME"},"link3":{"href":"https://harutofun.itch.io","position":3,"title":"⟪ ITCH.IO ⟫"},"link2":{"href":"https://store.steampowered.com/dev/harutofun","position":2,"title":"⟪ STEAM ⟫"},"6423116161213373154":{"href":"https://www.haruto.fun/p/feedback.html","position":6,"title":"FEEDBACK"}}]]></b:widget-setting>
+            <b:widget-setting name='pageListJson'><![CDATA[{"link1":{"href":"https://store.steampowered.com/dev/harutofun","position":1,"title":"⟪ STEAM ⟫"},"link0":{"href":"http://harutobessa.blogspot.com/","position":0,"title":"HOME"},"link4":{"href":"https://harutobessa.blogspot.com/p/qna.html","position":4,"title":"QNA"},"link3":{"href":"https://harutobessa.blogspot.com/p/about-me.html","position":3,"title":"ABOUT ME"},"link2":{"href":"https://harutofun.itch.io","position":2,"title":"⟪ ITCH.IO ⟫"},"6423116161213373154":{"href":"https://www.haruto.fun/p/feedback.html","position":5,"title":"FEEDBACK"}}]]></b:widget-setting>
             <b:widget-setting name='homeTitle'>Home</b:widget-setting>
           </b:widget-settings>
           <b:includable id='main'>
@@ -1382,40 +1459,6 @@ head.appendChild(script);
       to {opacity: 1}
     }
  </style>  ]]></b:widget-setting>
-              </b:widget-settings>
-              <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-  <b:include name='quickedit'/>
-</b:includable>
-            </b:widget>
-            <b:widget id='HTML6' locked='false' title='' type='HTML'>
-              <b:widget-settings>
-                <b:widget-setting name='content'><![CDATA[<div id="mytasks">
-    <iframe
-    src="https://view.monday.com/embed/7489446669-ed02802afb462dc27d3e75145c1e79f2?r=use1"
-    width="100%"
-    height="300"
-    style="border: 0; filter: invert(100%) hue-rotate(180deg);"
-  ></iframe
-  >
-</div>
-
-<script>
-var urlAtual = window.location.href;
-
-if (urlAtual === "https://www.haruto.fun/") { //home page
-  document.getElementById("mytasks").style.display = "block";
-} else { //other pages
-  document.getElementById("mytasks").style.display = "none";
-}
-</script>]]></b:widget-setting>
               </b:widget-settings>
               <b:includable id='main'>
   <!-- only display title if it's non-empty -->

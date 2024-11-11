@@ -1,7 +1,7 @@
 <!-------------------------------------------------------- ALL HOME WIDGETS ---------->
 <div id="home_widgets">
     <!-------------------------------------------------------- BLUESKY --------------->
-    <div id="bluesky" style="width: 350px; height: 200px; overflow: hidden; position: absolute; top: -50px; left: 200px;">
+    <div id="bluesky" style="width: 350px; height: 200px; overflow: hidden; position: absolute; top: -50px; left: 200px; font-family: 'Pixelify Sans', sans-serif !important;">
         <script src="https://cdn.jsdelivr.net/npm/bsky-embed@0.0.5/dist/bsky-embed.es.js" async="async" ></script>
         <bsky-embed  
             username="haruto.fun"
@@ -9,8 +9,21 @@
         >  
         </bsky-embed>
     </div>
+    <script>
+      window.addEventListener('load', function() {
+          const blueskyWidget = document.querySelector('#bluesky');
+          if (blueskyWidget) {
+              blueskyWidget.style.fontFamily = "'Pixelify Sans', sans-serif";
+              const widgetChildren = blueskyWidget.querySelectorAll('*');
+              widgetChildren.forEach(child => {
+                  child.style.fontFamily = "'Pixelify Sans', sans-serif";
+              });
+          }
+      });
+  </script>
+  
 
-
+  
     <!-------------------------------------------------------- NEW MII -------------------->
     <div id="characterWidget">
         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s1600/Sprite-0001.gif" alt="Personagem" id="characterGif" />
