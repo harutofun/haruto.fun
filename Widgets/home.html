@@ -1,7 +1,7 @@
 <!-------------------------------------------------------- ALL HOME WIDGETS ---------->
 <div id="home_widgets">
     <!-------------------------------------------------------- BLUESKY --------------->
-    <div id="bluesky" style="width: 350px; height: 200px; overflow: hidden; position: absolute; top: -50px; left: 200px; font-family: 'Pixelify Sans', sans-serif !important;">
+    <div id="bluesky" style="width: 350px; height: 200px; overflow: hidden; position: absolute; top: -50px; left: 200px; font-family: 'harutofunregular', sans-serif !important;">
         <script src="https://cdn.jsdelivr.net/npm/bsky-embed@0.0.5/dist/bsky-embed.es.js" async="async" ></script>
         <bsky-embed  
             username="haruto.fun"
@@ -13,10 +13,10 @@
       window.addEventListener('load', function() {
           const blueskyWidget = document.querySelector('#bluesky');
           if (blueskyWidget) {
-              blueskyWidget.style.fontFamily = "'Pixelify Sans', sans-serif";
+              blueskyWidget.style.fontFamily = "'harutofunregular', sans-serif";
               const widgetChildren = blueskyWidget.querySelectorAll('*');
               widgetChildren.forEach(child => {
-                  child.style.fontFamily = "'Pixelify Sans', sans-serif";
+                  child.style.fontFamily = "'harutofunregular', sans-serif";
               });
           }
       });

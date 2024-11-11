@@ -1,0 +1,109 @@
+
+.main-inner .widget .widget-content {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+.main-inner .widget h2 {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.whitespace-pre-wrap {
+    font-family: 'harutofunregular', sans-serif !important;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.footer-outer {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.post-body {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.sidebar .widget {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.main-inner .widget h2.date-header {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.main-inner .widget h2.date-header span {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.post-footer-line>*:first-child {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.post-footer-line>*:last-child {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+.post-footer-line>* {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+h3.post-title a {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.tabs-inner .widget li:last-child a {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.tabs-inner .widget li a {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.widget {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.content {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.footer-inner .widget h2 {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+</b:skin>
+
+
+<link href='https://harutofun.github.io/fonts/stylesheet.css' rel='stylesheet' type='text/css'/>
+
+
+    /* font-size: 7.5px; */
+    /* line-height: 1.3;
