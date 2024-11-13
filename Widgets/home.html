@@ -1,14 +1,20 @@
 <!-------------------------------------------------------- ALL HOME WIDGETS ---------->
 <div id="home_widgets">
     <!-------------------------------------------------------- BLUESKY --------------->
-    <div id="bluesky" style="width: 350px; height: 200px; overflow: hidden; position: absolute; top: -50px; left: 200px; font-family: 'harutofunregular', sans-serif !important;">
-        <script src="https://cdn.jsdelivr.net/npm/bsky-embed@0.0.5/dist/bsky-embed.es.js" async="async" ></script>
+    <div id="bluesky" style="width: 350px; height: 200px; overflow: hidden; position: absolute;
+    top: -25px; left: 700px; z-index: 20; font-family: 'harutofunregular', sans-serif !important;">
+     <!-- BLUESKY -->
+     <style>
+      .border-b{border-bottom-width:0px}
+      </style>
+        <script src="https://cdn.jsdelivr.net/npm/bsky-embed@0.0.5/dist/bsky-embed.es.js" async="async"></script>
         <bsky-embed  
             username="haruto.fun"
-            limit="1"
+            limit="2"
         >  
         </bsky-embed>
-    </div>
+        
+    <!-- SET FONT -->
     <script>
       window.addEventListener('load', function() {
           const blueskyWidget = document.querySelector('#bluesky');
@@ -20,15 +26,107 @@
               });
           }
       });
+    </script>
+    </div>
+    <!-- BACKGROUND-->
+    <div id="bluesky BACKGROUND" style="width: 400px; height: 400px; overflow: hidden; position: absolute;
+        top: -50px; left: 690px; z-index: 5;">
+    <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTcxt1TWjlzfDICJqSlTuGDbwr2RkGw3O5ON5XF7WW5vkEMKa3Fxwd_3fne0_FX2EE147iycDjKIZBhg3Lmcv1bB94-lhO3f6gxM5wAjdCDyW_VkcQUaMDQe6hwpjseQCoVO0ZQkEGq7P-ab2viOYWlhrgr-DYezbeR6g4fN98ID3yOQpmB0eX6S8xuTGk/s16000/bluesky%20box%202.png" 
+    style="position: absolute; top: -50; left: -500; z-index: 5;">
+    </div>
+    <div id="bluesky BACKGROUND 2" style="width: 400px; height: 400px; overflow: hidden; position: absolute;
+        top: -60px; left: 700px; z-index: 4;">
+    <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTcxt1TWjlzfDICJqSlTuGDbwr2RkGw3O5ON5XF7WW5vkEMKa3Fxwd_3fne0_FX2EE147iycDjKIZBhg3Lmcv1bB94-lhO3f6gxM5wAjdCDyW_VkcQUaMDQe6hwpjseQCoVO0ZQkEGq7P-ab2viOYWlhrgr-DYezbeR6g4fN98ID3yOQpmB0eX6S8xuTGk/s16000/bluesky%20box%202.png">
+    </div>
+    <div id="bluesky butterfly" style="width: 400px; height: 400px; overflow: hidden; position: absolute;
+    top: -45px; left: 700px; z-index: 30;">
+    <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhduwhKXa9NRPgCi8RoQwOtxDEx5jxDgNIiHXcbLYDcgjNkY8AxGFeB9vXFwufiBqLkGeM_8pzBHmFZayCPvsBepKPQ6nN0HEGs53gW9rHdfn2-bkScoh10q2pU1xEXAoMfWEcqqRZS5ibBIDxNUlG91KkVIFPeyH1nnZgHqketvrex3zEz1TaEsgJtJrVc/s1600/butterfly%20bluesky.gif">
+    </div>
+    <div id="bluesky butterfly 2" style="width: 400px; height: 400px; overflow: hidden; position: absolute;
+    top: -45px; left: 860px; z-index: 30;">
+    <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhduwhKXa9NRPgCi8RoQwOtxDEx5jxDgNIiHXcbLYDcgjNkY8AxGFeB9vXFwufiBqLkGeM_8pzBHmFZayCPvsBepKPQ6nN0HEGs53gW9rHdfn2-bkScoh10q2pU1xEXAoMfWEcqqRZS5ibBIDxNUlG91KkVIFPeyH1nnZgHqketvrex3zEz1TaEsgJtJrVc/s1600/butterfly%20bluesky.gif">
+    </div>
+    <!-- TEXT -->
+    <p id="texto-widget" style="position: relative; color: black; font-size: 15px; text-align: left; top: -59px; left: 718px; z-index: 5; ">
+      B L U E S K Y
+    </p>
+
+    <!-------------------------------------------------------- WALKING UTO --------------->
+    <img
+    id="walkinguto"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhslMfK0EcONOnJ_92R7eR5GUuE1ydrG-SSiQz_tt_sERmvOpWropJjY8OMrnGqHmjXrrB-rRpF0Vm8urkToz_kmZx0TaEOWk9sGncGJOlnTn7EetE8q0MSLiyn9lEM42uePf6uDKdLMrb794iDhbHp8vwjLWDqZ1q5Q4o1e2tJ5wM8eAkDqIc3aaxxh7gH/s16000/dance2.gif"
+    alt="haruto.fun"
+  />
+  <script>
+    const imagem = document.getElementById("walkinguto");
+    let posicaoX = 0;
+    let posicaoY = 0;
+    let direcaoX = 1;
+    let direcaoY = 1;
+    let movendo = true;
+  
+    // Defina as coordenadas da área em que a imagem pode se mover
+    const areaXInicial = -500;
+    const areaYInicial = -80;
+    const larguraArea = 1600;
+    const alturaArea = 700;
+  
+    function moverImagem() {
+      if (movendo) {
+        posicaoX += direcaoX;
+        posicaoY += direcaoY;
+  
+        // Verifica se a imagem atingiu as bordas da área definida
+        if (
+          posicaoX + imagem.width > areaXInicial + larguraArea ||
+          posicaoX < areaXInicial
+        ) {
+          direcaoX = -direcaoX;
+        }
+        if (
+          posicaoY + imagem.height > areaYInicial + alturaArea ||
+          posicaoY < areaYInicial
+        ) {
+          direcaoY = -direcaoY;
+        }
+  
+        imagem.style.left = posicaoX + "px";
+        imagem.style.top = posicaoY + "px";
+      }
+    }
+  
+    // Função para trocar a imagem ao clicar e parar de mover
+    imagem.addEventListener("click", () => {
+      movendo = false; // Para o movimento
+      imagem.src =
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyMC87z6c18cIWQ_1gXvjGl7Er5WLON5YOkyUvIvX7RzvhadsKyRKVwdcpciuerAq0GsbBTrA4DTD59MoqIpjjce59ztDpvP54OF22j6HADvvb_SN-TdQgO2JDBmOQ43q3ZUcaaAxastyrNQY2DuV4DhMh2Yf8ge4CRtHfEyCAiUbB4NF716PN85EV2LZw/s16000/dead.png"; // Mude o link para a nova imagem
+      setTimeout(() => {
+        imagem.style.display = "none"; // Some após 3 segundos
+      }, 3000);
+    });
+  
+    setInterval(moverImagem, 8);
   </script>
+  <style>
+    #walkinguto {
+      position: absolute;
+      z-index: 9990;
+    }
+  </style>
   
 
-  
+
+
+
+
+
+
+
+
     <!-------------------------------------------------------- NEW MII -------------------->
-    <div id="characterWidget">
+    <div id="characterWidget" style="width: 350px; height: 200px; overflow: hidden; position: absolute; top: 200px; left: 700px;" >
         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s1600/Sprite-0001.gif" alt="Personagem" id="characterGif" />
     </div>
-    
     <script>
         const gifElement = document.getElementById('characterGif');
         const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4CBkKnrXiZC_rs84P8nexunH9gDLM8qf8reRDAu3aYJyeZWGqpHBHXEwpxg6kGoloEYcBb2puFUJN/pub?output=csv'; // URL do CSV
@@ -87,12 +185,11 @@
         // call the function after loading the page
         loadGif();
     </script>
-    
     <style>
         /* WIDGET STYLE */
         #characterWidget {
           top: 200px; 
-          left: 20px; 
+          left: 400px; 
           z-index: 1000; /* depth */
         }
     
@@ -103,15 +200,6 @@
           z-index: 1000; /* depth? */
         }
     </style>
-    
-  
-  
-
-
-
-
-
-
 </div>
 
 <!-- HOME PAGE -->
