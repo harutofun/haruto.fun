@@ -56,65 +56,74 @@
     id="walkinguto"
     src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhslMfK0EcONOnJ_92R7eR5GUuE1ydrG-SSiQz_tt_sERmvOpWropJjY8OMrnGqHmjXrrB-rRpF0Vm8urkToz_kmZx0TaEOWk9sGncGJOlnTn7EetE8q0MSLiyn9lEM42uePf6uDKdLMrb794iDhbHp8vwjLWDqZ1q5Q4o1e2tJ5wM8eAkDqIc3aaxxh7gH/s16000/dance2.gif"
     alt="haruto.fun"
-  />
-  <script>
-    const imagem = document.getElementById("walkinguto");
-    let posicaoX = 0;
-    let posicaoY = 0;
-    let direcaoX = 1;
-    let direcaoY = 1;
-    let movendo = true;
-  
-    // Defina as coordenadas da área em que a imagem pode se mover
-    const areaXInicial = -500;
-    const areaYInicial = -80;
-    const larguraArea = 1600;
-    const alturaArea = 700;
-  
-    function moverImagem() {
-      if (movendo) {
-        posicaoX += direcaoX;
-        posicaoY += direcaoY;
-  
-        // Verifica se a imagem atingiu as bordas da área definida
-        if (
-          posicaoX + imagem.width > areaXInicial + larguraArea ||
-          posicaoX < areaXInicial
-        ) {
-          direcaoX = -direcaoX;
+    />
+    <script>
+      const imagem = document.getElementById("walkinguto");
+      let posicaoX = 0;
+      let posicaoY = 0;
+      let direcaoX = 1;
+      let direcaoY = 1;
+      let movendo = true;
+    
+      // Defina as coordenadas da área em que a imagem pode se mover
+      const areaXInicial = -500;
+      const areaYInicial = -80;
+      const larguraArea = 1600;
+      const alturaArea = 700;
+    
+      function moverImagem() {
+        if (movendo) {
+          posicaoX += direcaoX;
+          posicaoY += direcaoY;
+    
+          // Verifica se a imagem atingiu as bordas da área definida
+          if (
+            posicaoX + imagem.width > areaXInicial + larguraArea ||
+            posicaoX < areaXInicial
+          ) {
+            direcaoX = -direcaoX;
+          }
+          if (
+            posicaoY + imagem.height > areaYInicial + alturaArea ||
+            posicaoY < areaYInicial
+          ) {
+            direcaoY = -direcaoY;
+          }
+    
+          imagem.style.left = posicaoX + "px";
+          imagem.style.top = posicaoY + "px";
         }
-        if (
-          posicaoY + imagem.height > areaYInicial + alturaArea ||
-          posicaoY < areaYInicial
-        ) {
-          direcaoY = -direcaoY;
-        }
-  
-        imagem.style.left = posicaoX + "px";
-        imagem.style.top = posicaoY + "px";
       }
-    }
-  
-    // Função para trocar a imagem ao clicar e parar de mover
-    imagem.addEventListener("click", () => {
-      movendo = false; // Para o movimento
-      imagem.src =
-        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyMC87z6c18cIWQ_1gXvjGl7Er5WLON5YOkyUvIvX7RzvhadsKyRKVwdcpciuerAq0GsbBTrA4DTD59MoqIpjjce59ztDpvP54OF22j6HADvvb_SN-TdQgO2JDBmOQ43q3ZUcaaAxastyrNQY2DuV4DhMh2Yf8ge4CRtHfEyCAiUbB4NF716PN85EV2LZw/s16000/dead.png"; // Mude o link para a nova imagem
-      setTimeout(() => {
-        imagem.style.display = "none"; // Some após 3 segundos
-      }, 3000);
-    });
-  
-    setInterval(moverImagem, 8);
-  </script>
-  <style>
-    #walkinguto {
-      position: absolute;
-      z-index: 9990;
-    }
-  </style>
-  
-
+    
+      // Função para trocar a imagem ao clicar e parar de mover
+      imagem.addEventListener("click", () => {
+        movendo = false; // Para o movimento
+        imagem.src =
+          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyMC87z6c18cIWQ_1gXvjGl7Er5WLON5YOkyUvIvX7RzvhadsKyRKVwdcpciuerAq0GsbBTrA4DTD59MoqIpjjce59ztDpvP54OF22j6HADvvb_SN-TdQgO2JDBmOQ43q3ZUcaaAxastyrNQY2DuV4DhMh2Yf8ge4CRtHfEyCAiUbB4NF716PN85EV2LZw/s16000/dead.png"; // Mude o link para a nova imagem
+        setTimeout(() => {
+          imagem.style.display = "none"; // Some após 3 segundos
+        }, 3000);
+      });
+    
+      setInterval(moverImagem, 8);
+    </script>
+    <style>
+      #walkinguto {
+        position: absolute;
+        z-index: 9990;
+      }
+    </style>
+    
+    <!-------------------------------------------------------- KO-FI --------------->
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('harutofun', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Feed me',
+        'floating-chat.donateButton.background-color': '#000000',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
+    </script>
 
 
 
@@ -125,7 +134,7 @@
 
     <!-------------------------------------------------------- NEW MII -------------------->
     <div id="characterWidget" style="width: 350px; height: 200px; overflow: hidden; position: absolute; top: 200px; left: 700px;" >
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s1600/Sprite-0001.gif" alt="Personagem" id="characterGif" />
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPNji7Nm8UzgGkL7Y4-Hqv3RtKI7j01Sba-AEkiS3vq4fK-1nfvVNqqonLu2mvRPz4HTMs2AgrBkqwShOBSLN0lzH-az_MNJDazQ9PUhHs0FX5Ea9lRzqSu6HVV744LMa6GJMvclEB546iBSIdLHJOMc4F8_POgV9MRGWiiJNCeUCxhTudgLeqApigbAgc/s16000/empty.gif" alt="Personagem" id="characterGif" />
     </div>
     <script>
         const gifElement = document.getElementById('characterGif');
@@ -134,7 +143,10 @@
         // GIFS TO BE RANDOMIZED YAY
         const randomGifs = [
           'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s1600/Sprite-0001.gif',
-          'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUxKjOeQer9TpjKnJXhByFNdrLG1bpv-M-P1RT8TZ8riETMcz-eEOKwcw3dtjfSkDXFbGbasR1B7Z_WsxKSwAC4vicIRPn9whlCZJr6G1yI63xug2VeOyFBrT3LHICHdKb8JsG6kCVSzV-fprmh1DA0oCWQErQjtEANFxEUxPEDk6OaKhsITJ2EI0dPdBD/s1600/mold.gif'
+          'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif',
+          'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUxKjOeQer9TpjKnJXhByFNdrLG1bpv-M-P1RT8TZ8riETMcz-eEOKwcw3dtjfSkDXFbGbasR1B7Z_WsxKSwAC4vicIRPn9whlCZJr6G1yI63xug2VeOyFBrT3LHICHdKb8JsG6kCVSzV-fprmh1DA0oCWQErQjtEANFxEUxPEDk6OaKhsITJ2EI0dPdBD/s1600/mold.gif',
+          'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxPTH0-kbqU5XNDhkU-fu27N6zVskKQsU9AAps3VK7qkm9Z3dY1VHTDWWjZeIpuxLY1zLMwVp3jNTlUzufoT1_p_Fdl6cCQ9T5MbXp9yAosyP80nJWWmmIA5PaJUJF2vZqKoMqYbukRp1JqVmB_MZdyLjymYMe1tzroGVsJXWnlvpUkdFtzD-WKVJxE_w9/s1600/ramen1.gif',
+          'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEgjRfBgGmuVMi3-eyLDg2EICUxfxrMdbm7-k05NIgqCEFoNxkp6_UMpNvNgYIT1-FTea26SN1XuQ30zpsxX6aPX7oBJBgYgv3J_sSw2s0s26B7cbW3WKt_TyVQRrBevEP7gwAbiq6d17cpqQ5LMED98PiERtgGg8d_cyd1ahhKqcttCCNJFDCQh6aiJZt/s1600/mold3.gif',
         ];
     
         // LOAD BASED ON TAG OR RANDOMIZED GIF
@@ -161,7 +173,7 @@
             if (tag) {
               switch (tag) {
                 case 'Art':
-                  gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif';
+                  gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtDxsJ1bG3N-sa7cr8AwxsHMKiq4_iARF6rcF-DWQEx1quYeOF26Gy0SOkzE_3lSbbm9sPrMvEOoZ8hCDashsYxe67yx48LyYBw_RtdfepL0nc2VARQ6odvmJVxozrX0Prn-jC0RJb22YiJhyMPQ2UpghI3VIQoi8lbkCKDMd_oL7u64g5xJ_846-XNS7F/s1600/blog%20version.gif';
                   break;
                 case 'Code':
                   gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif';
