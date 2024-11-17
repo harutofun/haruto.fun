@@ -444,7 +444,7 @@ h2 {
   background-color: $(widget.background.color);
   border: 1px solid $(widget.border.color);
   padding: 0 $(widget.padding.side) 15px;
-  margin: 20px -16px;
+  margin: 5px -16px;
 
   -moz-box-shadow: 0 0 $(shadow.spread) rgba(0, 0, 0, .2);
   -webkit-box-shadow: 0 0 $(shadow.spread) rgba(0, 0, 0, .2);
@@ -560,11 +560,11 @@ body .main-inner .Blog {
 
 .main-inner .section:last-child .Blog:last-child {
   padding: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0em;
 }
 
 .main-inner .widget h2.date-header {
-  margin: 0 -15px 1px;
+  margin: 0 20px 1px;
   padding: 0 0 $(date.padding.bottom) 0;
 
   font: $(date.font);
@@ -572,18 +572,8 @@ body .main-inner .Blog {
 
   background: $(date.background);
 
-  border-top: $(date.border.size) solid $(date.border.color);
-  border-bottom: 1px solid $(widget.border.bevel.color);
-
-  -moz-border-radius-topleft: $(date.header.border.radius.top);
-  -moz-border-radius-topright: $(date.header.border.radius.top);
-  -webkit-border-top-left-radius: $(date.header.border.radius.top);
-  -webkit-border-top-right-radius: $(date.header.border.radius.top);
-  border-top-left-radius: $(date.header.border.radius.top);
-  border-top-right-radius: $(date.header.border.radius.top);
-
   position: $(date.position);
-  bottom: 100%;
+  bottom: 10%;
   $(date.side): $(date.header.position);
   text-shadow: 0 0 $(title.shadow.spread) #000000;
 }
@@ -592,13 +582,11 @@ body .main-inner .Blog {
   font: $(date.font);
   display: block;
   padding: .5em 15px;
-  border-left: $(date.border.size) solid $(date.border.color);
-  border-right: $(date.border.size) solid $(date.border.color);
 }
 
 .date-outer {
   position: relative;
-  margin: $(date.space) 0 20px;
+  margin: 0px 0 0px;
   padding: 0 15px;
 
   background-color: $(post.background.color);
@@ -693,7 +681,7 @@ h3.post-title a:hover {
 }
 
 .post-header {
-  margin: 0 0 .8em;
+  margin: 0 0 .4em;
 }
 
 .post-body {
@@ -709,7 +697,7 @@ h3.post-title a:hover {
 }
 
 #blog-pager {
-  padding: 15px;
+  padding: 2px;
   font-size: 120%;
 
   background-color: $(pager.background.color);
@@ -734,11 +722,11 @@ h3.post-title a:hover {
   border-top-left-radius: $(pager.border.radius.top);
   border-top-right-radius-topright: $(pager.border.radius.top);
 
-  margin-top: $(pager.space.top);
+  margin-top: 1em;
 }
 
 .blog-feeds, .post-feeds {
-  margin: 1em 0;
+  margin: 0em 0;
   text-align: center;
   color: $(feed.text.color);
 }
@@ -973,7 +961,7 @@ body.mobile {
 
 .post-body {
     font-family: 'harutofunregular', sans-serif;
-    font-size: 11.5px;
+    font-size: 14px;
     line-height: 1.3;
 }
 
@@ -1048,6 +1036,14 @@ h3.post-title a {
     line-height: 1.3;
 }
 
+
+h3.post-title, h4 {
+    font-family: 'harutofunregular', sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+
 /* Oculta a barra de rolagem, mas permite a rolagem */
 html {
     overflow: -moz-scrollbars-none;
@@ -1055,12 +1051,16 @@ html {
 }
 body::-webkit-scrollbar { 
     display: none; 
-}]]></b:skin>
+}
+
+
+
+]]></b:skin>
 
     <b:template-skin>
-      <b:variable default='960px' name='content.width' type='length' value='909px'/>
+      <b:variable default='960px' name='content.width' type='length' value='700px'/>
       <b:variable default='0' name='main.column.left.width' type='length' value='0px'/>
-      <b:variable default='310px' name='main.column.right.width' type='length' value='260px'/>
+      <b:variable default='310px' name='main.column.right.width' type='length' value='0px'/>
 
       <![CDATA[
       body {
@@ -1139,7 +1139,7 @@ body::-webkit-scrollbar {
 
   <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
   <b:section class='navbar' id='navbar' maxwidgets='1' name='Navbar' showaddelement='no'>
-    <b:widget id='Navbar1' locked='true' title='Navbar' type='Navbar' version='1'>
+    <b:widget id='Navbar1' locked='false' title='Navbar' type='Navbar' version='1'>
       <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
     function setAttributeOnload(object, attribute, val) {
       if(window.addEventListener) {
@@ -1158,7 +1158,11 @@ body::-webkit-scrollbar {
           gapi.iframes.getContext().openChild({
               url: &#39;https://www.blogger.com/navbar.g?targetBlogID\x3d4475842425272927181\x26blogName\x3dharuto\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dDISABLED\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://www.haruto.fun/search\x26blogLocale\x3den\x26v\x3d2\x26homepageUrl\x3dhttps://www.haruto.fun/\x26vt\x3d-577743895151567174&#39;,
               where: document.getElementById(&quot;navbar-iframe-container&quot;),
-              id: &quot;navbar-iframe&quot;
+              id: &quot;navbar-iframe&quot;,
+              messageHandlersFilter: gapi.iframes.CROSS_ORIGIN_IFRAMES_FILTER,
+              messageHandlers: {
+                &#39;blogger-ping&#39;: function() {}
+              }
           });
         }
       });
@@ -1240,84 +1244,7 @@ head.appendChild(script);
     <div class='fauxborder-left header-fauxborder-left'>
     <div class='fauxborder-right header-fauxborder-right'/>
     <div class='region-inner header-inner'>
-      <b:section class='header' id='header' maxwidgets='1' name='Header' showaddelement='no'>
-        <b:widget id='Header1' locked='true' title='haruto (Header)' type='Header'>
-          <b:widget-settings>
-            <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEh4FsmeBrBrzkr7hTC3sd3Q5JyjiIQrAXsIPG_OuYKgioDHpvB6FAFYscX3x-XFW6AXsS27bA1GJL-sn0NDKVdHRAzoNBppfTWuTmClpYMH_HbMnLZrHb1PLkylT6U_jvwNxIHEuEQJOEfrhwrxcsaVcyJsfL9j9juYiQ4LwOQZSVJGo_dLkKIbtMT6lYya=s500</b:widget-setting>
-            <b:widget-setting name='displayHeight'>140</b:widget-setting>
-            <b:widget-setting name='sectionWidth'>877</b:widget-setting>
-            <b:widget-setting name='useImage'>true</b:widget-setting>
-            <b:widget-setting name='shrinkToFit'>true</b:widget-setting>
-            <b:widget-setting name='imagePlacement'>REPLACE</b:widget-setting>
-            <b:widget-setting name='displayWidth'>500</b:widget-setting>
-          </b:widget-settings>
-          <b:includable id='main'>
-
-  <b:if cond='data:useImage'>
-    <b:if cond='data:imagePlacement == &quot;BEHIND&quot;'>
-      <!--
-      Show image as background to text. You can't really calculate the width
-      reliably in JS because margins are not taken into account by any of
-      clientWidth, offsetWidth or scrollWidth, so we don't force a minimum
-      width if the user is using shrink to fit.
-      This results in a margin-width's worth of pixels being cropped. If the
-      user is not using shrink to fit then we expand the header.
-      -->
-      <b:if cond='data:mobile'>
-        <div id='header-inner'>
-          <div class='titlewrapper' style='background: transparent'>
-            <h1 class='title' style='background: transparent; border-width: 0px'>
-              <b:include name='title'/>
-            </h1>
-          </div>
-          <b:include name='description'/>
-        </div>
-      <b:else/>
-        <div expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot;                      + &quot;background-position: &quot;                      + data:backgroundPositionStyleStr + &quot;; &quot;                      + data:widthStyleStr                      + &quot;min-height: &quot; + data:height                      + &quot;_height: &quot; + data:height                      + &quot;background-repeat: no-repeat; &quot;' id='header-inner'>
-          <div class='titlewrapper' style='background: transparent'>
-            <h1 class='title' style='background: transparent; border-width: 0px'>
-              <b:include name='title'/>
-            </h1>
-          </div>
-          <b:include name='description'/>
-        </div>
-      </b:if>
-    <b:else/>
-      <!--Show the image only-->
-      <div id='header-inner'>
-        <a expr:href='data:blog.homepageUrl' style='display: block'>
-          <img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' expr:width='data:width' style='display: block'/>
-        </a>
-        <!--Show the description-->
-        <b:if cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;'>
-          <b:include name='description'/>
-        </b:if>
-      </div>
-    </b:if>
-  <b:else/>
-    <!--No header image -->
-    <div id='header-inner'>
-      <div class='titlewrapper'>
-        <h1 class='title'>
-          <b:include name='title'/>
-        </h1>
-      </div>
-      <b:include name='description'/>
-    </div>
-  </b:if>
-</b:includable>
-          <b:includable id='description'>
-  <div class='descriptionwrapper'>
-    <p class='description'><span><data:description/></span></p>
-  </div>
-</b:includable>
-          <b:includable id='title'>
-  <b:tag cond='data:blog.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
-    <data:title/>
-  </b:tag>
-</b:includable>
-        </b:widget>
-      </b:section>
+      <b:section class='header' id='header' maxwidgets='1' name='Header' showaddelement='no'/>
     </div>
     </div>
     <div class='header-cap-bottom cap-bottom'>
@@ -1335,46 +1262,7 @@ head.appendChild(script);
     <div class='fauxborder-left tabs-fauxborder-left'>
     <div class='fauxborder-right tabs-fauxborder-right'/>
     <div class='region-inner tabs-inner'>
-      <b:section class='tabs' id='crosscol' maxwidgets='1' name='Cross-Column' showaddelement='yes'>
-        <b:widget id='PageList2' locked='false' title='PAGES' type='PageList'>
-          <b:widget-settings>
-            <b:widget-setting name='pageListJson'><![CDATA[{"link1":{"href":"https://store.steampowered.com/dev/harutofun","position":1,"title":"⟪ STEAM ⟫"},"link0":{"href":"http://harutobessa.blogspot.com/","position":0,"title":"HOME"},"link4":{"href":"https://harutobessa.blogspot.com/p/qna.html","position":4,"title":"QNA"},"link3":{"href":"https://harutobessa.blogspot.com/p/about-me.html","position":3,"title":"ABOUT ME"},"link2":{"href":"https://harutofun.itch.io","position":2,"title":"⟪ ITCH.IO ⟫"},"6423116161213373154":{"href":"https://www.haruto.fun/p/feedback.html","position":5,"title":"FEEDBACK"}}]]></b:widget-setting>
-            <b:widget-setting name='homeTitle'>Home</b:widget-setting>
-          </b:widget-settings>
-          <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
-  <div class='widget-content'>
-    <b:if cond='data:mobile'>
-      <select expr:id='data:widget.instanceId + &quot;_select&quot;'>
-        <b:if cond='data:showPlaceholder'>
-          <option disabled='disabled' hidden='hidden' value=''>
-            <b:attr cond='!data:hasCurrentPage' name='selected' value='selected'/>
-            <b:message name='messages.moveToPage'/>
-          </option>
-        </b:if>
-        <b:loop values='data:links' var='link'>
-          <option expr:value='data:link.href'>
-            <b:attr cond='data:link.isCurrentPage' name='selected' value='selected'/>
-            <data:link.title/>
-          </option>
-        </b:loop>
-      </select>
-      <span class='pagelist-arrow'>&amp;#9660;</span>
-    <b:else/>
-      <ul>
-        <b:loop values='data:links' var='link'>
-          <li>
-            <b:class cond='data:link.isCurrentPage' name='selected'/>
-            <a expr:href='data:link.href'><data:link.title/></a>
-          </li>
-        </b:loop>
-      </ul>
-    </b:if>
-    <b:include name='quickedit'/>
-  </div>
-</b:includable>
-        </b:widget>
-      </b:section>
+      <b:section class='tabs' id='crosscol' maxwidgets='1' name='Cross-Column' showaddelement='yes'/>
       <b:section class='tabs' id='crosscol-overflow' name='Cross-Column 2' showaddelement='no'/>
     </div>
     </div>
@@ -1450,100 +1338,415 @@ head.appendChild(script);
         <div class='column-center-outer'>
         <div class='column-center-inner'>
           <b:section class='main' id='main' name='Main' showaddelement='no'>
-            <b:widget id='HTML4' locked='false' title='' type='HTML'>
-              <b:widget-settings>
-                <b:widget-setting name='content'><![CDATA[<div class="slideshow-container">
-
-    <div class="mySlides fade">
-      <a href="https://store.steampowered.com/app/1870400/Super_SpaceMail/"> 
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipZGHwvoHz09eZyI7zVOVdFJo0PaBz-zmxV3z0pE7ilEV6lu4taEFS6oi7kMwUYnEBOadaTOhhRA4MQNadFIbBVlgQ2giQ9V7tUnzaCA6E1xhmuowVmPKdBpnu6fbvN1yz_pmHbqc4lQP3XNAe6T4WWetwmCSaH-emMHCM1X4WcTYOIgTHNbWfGXXRyJj9/s16000/stream%20banner%20SMOL%20BLOG.gif" width="600" height="200" /> 
-      </a>
-    </div>
-  
-    <div class="mySlides fade">
-      <a href="https://harutobessa.itch.io/lostincode">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAjDHciRagSmEMtKueTgTWLcVrZERLJIU5RsACtGqkzpjEAPd2ttUborjX6cYxEYHHE2VAeJS4pUbZarNVrci1n8oSWXzKJg2KQXCoUMdfvW4dYlDHX6DVHwAsB8U90PH8-xdLSekuJymIee2LA713e-7d7nthgt3VeY42bYviToxS9r718BXAGrE6GXf0/s16000/long%20banner.gif" width="600" height="200" /> 
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-        <a href="https://a.co/d/ht6NnjA"> 
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMGs_8bgw-AqgwqErp-ivvpGHCzWNU9cZDTVVSVhRYILnKyThnIi_M-8UJwiK72iCTiY1MRkY_mMWYyVAHXd6mF7qn8i2bm70iNX9TG0NTZG5zE5wdhiderQ0L3n1-QJgphm1SPQ8c9PP6sR_YYF2wM3PT2JBu2mDh97yJt-USsn6Ii1LqnTo5cm0V3mNB/s16000/blog%20thingy.png" width="600" height="200" /> 
-        </a>
-      </div>
-  </div>
-  
-  <script>
-  let slideIndex = 0;
-  showSlides();
-  
-  function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 15000); // Change image every 15 seconds
-  }
-  </script>
-  
-  <style>
-    .mySlides {display: none}
-    .fade {animation-name: fade; animation-duration: .5s}
-    
-    @keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
- </style>  ]]></b:widget-setting>
-              </b:widget-settings>
-              <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-  <b:include name='quickedit'/>
-</b:includable>
-            </b:widget>
             <b:widget id='HTML1' locked='false' title='' type='HTML'>
               <b:widget-settings>
-                <b:widget-setting name='content'><![CDATA[<div id="bluesky" style="font-family: 'Pixelify Sans', sans-serif !important;">
-    <script src="https://cdn.jsdelivr.net/npm/bsky-embed@0.0.5/dist/bsky-embed.es.js" async="async" ></script>
-    <bsky-embed  
-      username="haruto.fun"
-      limit="1"
-    >  
-    </bsky-embed>
-</div>
+                <b:widget-setting name='content'><![CDATA[<!-------------------------------------------------------- ALL HOME WIDGETS ---------->
+<div id="home_widgets">
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-------------------------------------------------------- SUPER SPACEMAIL --------------->
+  <a href="https://store.steampowered.com/app/1870400/Super_SpaceMail/" 
+  style="top: 140px; left: 240px; z-index: 30; width: 133px; height: 89px; overflow: hidden; position: absolute;" 
+  onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+   <img id="ssm-click" 
+ src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyqootx5mK60ciBKFi8P9s88DomIPwh_swABfpOK-CA7s4yB6xt-JyjqFnEFsn-Q6kHbJWWEPbBnTaXHxOOg1mYAzjQos6yrRKo6hQNHBtso-RQDeCrTKQaWhnH6HKOVMKuAn5-d0XcyNUC1CUijSMbznbkSegZ_oQOCLNAt8T_Hjuw8m0jy8oc4Yf75Zw/s16000/GAME%20DISK2.gif" 
+ alt="ssm-click" />
+</a>
+<script>
+ function hoverEffect(element) {
+   const img = element.querySelector("img");
+   img.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZonmoMKVkzWSTb0pGqeXJfayyDPPc-6TYMe2yt0XtL61QUWWDJjbvBMUpzIVcID1Z00heqKSheONYhY0-rxnBJS_wkWu0bjQKonIYYjDeA53JCD4KgKk8EteU-71Y0x9LmPXkdq6hXKS4VKXQq-MHChRUFwGSv_4YmzL0VjA8pdda-yLAukXcQ-jTNoBK/s16000/gamebanner_animated.gif";
+   element.style.zIndex = "200";
+   element.style.width = "315px";
+   element.style.height = "250px";
+   element.style.top = "60px";
+   element.style.left = "135px";
+ }
+
+ function resetEffect(element) {
+   const img = element.querySelector("img");
+   img.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyqootx5mK60ciBKFi8P9s88DomIPwh_swABfpOK-CA7s4yB6xt-JyjqFnEFsn-Q6kHbJWWEPbBnTaXHxOOg1mYAzjQos6yrRKo6hQNHBtso-RQDeCrTKQaWhnH6HKOVMKuAn5-d0XcyNUC1CUijSMbznbkSegZ_oQOCLNAt8T_Hjuw8m0jy8oc4Yf75Zw/s16000/GAME%20DISK2.gif";
+   element.style.zIndex = "30";
+   element.style.width = "133px";
+   element.style.height = "89px";
+   element.style.top = "140px"; 
+   element.style.left = "240px"; 
+ }
+</script>
+
+  <!-------------------------------------------------------- BACKGROUND HANDS --------------->
+  <div id="hansd" style="width: 914px; height: 786px; overflow: hidden; position: absolute;
+  top: -200px; left: -150px; z-index: 0;">
+  <img id="hands" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiy6pABM1_wI_GcWNiUoJzMUyqQMUeHPaBYwnfqlQdTA5pPyX9cevDRrv9GErh5lmcPA_vaojrc6BrPFtvxiNLrKBWLW3oqULBHgO7ESgrFqcfpfSLMuIDMtJZzH9ic6Q9W8-7E1XIqh1dLBFwNuwUKtDkPaKSkmM92-UOuUTL4GmM7TBEa6uSKVXEME_5i/s16000/hands%205.gif" />
+  </div>
+
+
+  <!-------------------------------------------------------- FEEDBACK PAGE --------------->
+  <a href="https://www.haruto.fun/p/feedback.html" style="top: 550px; left: 1000px; z-index: 30; width: 107px; height: 130px; overflow: hidden; position: absolute;">
+    <img id="feecbaklink" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhw_n9yD-R5JY6GFimfrTnd06on2rX4jLJ8NMlMrAzuj3nta0CVDWslWvrx8r5zcZrPfFipmbfOzL6dL3e_8Bp9n2U7F6SlEhLQ0JXtohd1dTd_6hCicjCHuOa4HgKH15lMw8LPp9tKdxTPT9y8pqzfLGb2gkFdQ07Pqqu4GYbBZ3KLq4DkO4AOwV-CE_Yf/s1600/BUS.png" alt="bugs" />
+  </a>
+
+  <!-------------------------------------------------------- DEV ACCOUNTS --------------->
+  <div id="dev-accounts">
+    <!-------------------------------------------------------- STEAM --------------->
+    <a href="https://store.steampowered.com/dev/harutofun" style="top: 135px; left: -350px; z-index: 30; width: 70px; height: 84px; overflow: hidden; position: absolute;">
+      <img id="imagem-fundo-steam" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbEKbLd8dRDiw44BLSjXy425yaIU7epKfVWcxsv0HM3N4iqCYTuWZQWPdRoQ935qxx50KuJDBqjgpdyvqZc2QjlqWU0r2NeGzwCMc29x925W7_KncIm14f0FNOcfeJPPsCkDNs3ITf7mysq1ZUnwI0lEYIrgOkKgnjdZXq4d5FSeZhw2NZuB30PNwYBEgn/s1600/steam.png" alt="steam link" />
+    </a>
+    <!-------------------------------------------------------- ITCHIO --------------->
+    <a href="https://harutofun.itch.io/" style="top: 170px; left: -250px; z-index: 30; width: 66px; height: 74px; overflow: hidden; position: absolute;">
+      <img id="imagem-fundo-itchio" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGvkjeBNFRnfak9EkP7O3XHvdoICbOD24RTehyHaFwK1lA6nJw6jb9hCWojaZ-Fp65cPNnoLIw13yRj0Ni-vPpoaq4LGQ99h11Mv5xENEw2lNTRr7KBssvdEJqV_Ca4DTmSk4y6AMOxLA4c7hYcoN4sipyQZxYD3JkcS-FpIcFOd5B2p9CY1OvxP7-vU0y/s1600/itchio.png" alt="itchio link" />
+    </a>
+  </div>
+
+  <!-------------------------------------------------------- SPOTIFY --------------->
+  <div id="spotify-app">
+    <iframe
+    style="border-radius:12px; top: -35px; left: -450px; z-index: 10; position: absolute; filter: brightness(0.8) contrast(1.5) saturate(0.5);"
+    src="https://open.spotify.com/embed/artist/7kbfVpwqInTlCxwfNFXjlJ?utm_source=generator"
+    width="50%"
+    height="152"
+    frameborder="0"
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+    >
+  </iframe
+></div>
+
+  <!-------------------------------------------------------- FILES IMAGE --------------->
+  <div id="background-files" style="top: 440px; left: -5px; z-index: 0;  width: 675px; height: 217px; overflow: hidden; position: absolute;">
+  <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3rsTNJBbDtmvNS-pr8CEj4up7CKd14cloQ6wNzyrZs1mHlvUaK97qWKlN33pBPiEEGst7T1zy6CGP4iNRxVdHr5L-COcvp4bIilVWSJP4z5jtK2c_5ajAghRoFK-MvY09KIqWjAQf8GvZFabSfAYwDjSN74a2JXoyu2xMrclLzdGPOy1pTyLn9ZVDV-Bm/s16000/files2.png" />
+  </div>
+
+  <!-------------------------------------------------------- BLUESKY --------------->
+  <div id="bluesky" style="width: 350px; height: 200px; overflow: hidden; position: absolute;
+  top: -25px; left: 700px; z-index: 20; font-family: 'harutofunregular', sans-serif !important;">
+    <!-- BLUESKY -->
+    <style>
+    .border-b{border-bottom-width:0px}
+    </style>
+      <script src="https://cdn.jsdelivr.net/npm/bsky-embed@0.0.5/dist/bsky-embed.es.js" async="async"></script>
+      <bsky-embed  
+          username="haruto.fun"
+          limit="2"
+      >  
+      </bsky-embed>
+      
+  <!-- SET FONT -->
+  <script>
+    window.addEventListener('load', function() {
+        const blueskyWidget = document.querySelector('#bluesky');
+        if (blueskyWidget) {
+            blueskyWidget.style.fontFamily = "'harutofunregular', sans-serif";
+            const widgetChildren = blueskyWidget.querySelectorAll('*');
+            widgetChildren.forEach(child => {
+                child.style.fontFamily = "'harutofunregular', sans-serif";
+            });
+        }
+    });
+  </script>
+  </div>
+  <!-- BACKGROUND-->
+  <div id="bluesky-BACKGROUND" style="width: 400px; height: 400px; overflow: hidden; position: absolute;
+      top: -50px; left: 690px; z-index: 5;">
+  <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTcxt1TWjlzfDICJqSlTuGDbwr2RkGw3O5ON5XF7WW5vkEMKa3Fxwd_3fne0_FX2EE147iycDjKIZBhg3Lmcv1bB94-lhO3f6gxM5wAjdCDyW_VkcQUaMDQe6hwpjseQCoVO0ZQkEGq7P-ab2viOYWlhrgr-DYezbeR6g4fN98ID3yOQpmB0eX6S8xuTGk/s16000/bluesky%20box%202.png" 
+ style="position: absolute; top: -50; left: -500; z-index: 5;" />
+  </div>
+  <div id="bluesky-BACKGROUND-2" style="width: 400px; height: 400px; overflow: hidden; position: absolute;
+      top: -60px; left: 700px; z-index: 4;">
+  <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTcxt1TWjlzfDICJqSlTuGDbwr2RkGw3O5ON5XF7WW5vkEMKa3Fxwd_3fne0_FX2EE147iycDjKIZBhg3Lmcv1bB94-lhO3f6gxM5wAjdCDyW_VkcQUaMDQe6hwpjseQCoVO0ZQkEGq7P-ab2viOYWlhrgr-DYezbeR6g4fN98ID3yOQpmB0eX6S8xuTGk/s16000/bluesky%20box%202.png" />
+  </div>
+  <div id="bluesky-butterfly" style="width: 26px; height: 31px; overflow: hidden; position: absolute;
+  top: -45px; left: 700px; z-index: 30;">
+  <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhduwhKXa9NRPgCi8RoQwOtxDEx5jxDgNIiHXcbLYDcgjNkY8AxGFeB9vXFwufiBqLkGeM_8pzBHmFZayCPvsBepKPQ6nN0HEGs53gW9rHdfn2-bkScoh10q2pU1xEXAoMfWEcqqRZS5ibBIDxNUlG91KkVIFPeyH1nnZgHqketvrex3zEz1TaEsgJtJrVc/s1600/butterfly%20bluesky.gif" />
+  </div>
+  <div id="bluesky-butterfly-2" style="width: 26px; height: 31px; overflow: hidden; position: absolute;
+  top: -45px; left: 860px; z-index: 30;">
+  <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhduwhKXa9NRPgCi8RoQwOtxDEx5jxDgNIiHXcbLYDcgjNkY8AxGFeB9vXFwufiBqLkGeM_8pzBHmFZayCPvsBepKPQ6nN0HEGs53gW9rHdfn2-bkScoh10q2pU1xEXAoMfWEcqqRZS5ibBIDxNUlG91KkVIFPeyH1nnZgHqketvrex3zEz1TaEsgJtJrVc/s1600/butterfly%20bluesky.gif" />
+  </div>
+  <div id="bluesky-text-and-icon">
+    <a href="https://bsky.app/profile/haruto.fun" style="top: 150px; left: 1030px; z-index: 30;
+    width: 71px; height: 71px; overflow: hidden; position: absolute;">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYybCURqzhgGVOlbCg3ZX2kdajK6xpy-HIHnGFbmbXI6UpAQU05Kacp_UeYrWeI49XV1aIYOJ4g7UiTmDmitZE1vXr3l_NuT_qlKGkfTctg131gw6B0n0Rzl-9Fd2WB1hR609M7X2ds8P4f_WxpxyDfme9xQBD6zTj3SGd7PK4EIgWlmqNGoMBYxDr_ZOQ/s16000/bluesky%20icon.png" alt="bluesky yay" />
+    </a>
+    <!-- TEXT -->
+    <p id="texto-widget" style="position: relative; color: black; font-size: 15px; text-align: left; top: -59px; left: 718px; z-index: 5; ">
+      B L U E S K Y
+    </p>
+  </div>
+
+  <!-------------------------------------------------------- WALKING UTO --------------->
+  <img
+  id="walkinguto"
+  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhslMfK0EcONOnJ_92R7eR5GUuE1ydrG-SSiQz_tt_sERmvOpWropJjY8OMrnGqHmjXrrB-rRpF0Vm8urkToz_kmZx0TaEOWk9sGncGJOlnTn7EetE8q0MSLiyn9lEM42uePf6uDKdLMrb794iDhbHp8vwjLWDqZ1q5Q4o1e2tJ5wM8eAkDqIc3aaxxh7gH/s16000/dance2.gif"
+  alt="haruto.fun"
+  />
+  <script>
+    const imagem = document.getElementById("walkinguto");
+    let posicaoX = 0;
+    let posicaoY = 0;
+    let direcaoX = 1;
+    let direcaoY = 1;
+    let movendo = true;
+  
+    // Defina as coordenadas da área em que a imagem pode se mover
+    const areaXInicial = -500;
+    const areaYInicial = -80;
+    const larguraArea = 1600;
+    const alturaArea = 700;
+  
+    function moverImagem() {
+      if (movendo) {
+        posicaoX += direcaoX;
+        posicaoY += direcaoY;
+  
+        // Verifica se a imagem atingiu as bordas da área definida
+        if (
+          posicaoX + imagem.width > areaXInicial + larguraArea ||
+          posicaoX < areaXInicial
+        ) {
+          direcaoX = -direcaoX;
+        }
+        if (
+          posicaoY + imagem.height > areaYInicial + alturaArea ||
+          posicaoY < areaYInicial
+        ) {
+          direcaoY = -direcaoY;
+        }
+  
+        imagem.style.left = posicaoX + "px";
+        imagem.style.top = posicaoY + "px";
+      }
+    }
+  
+    // Função para trocar a imagem ao clicar e parar de mover
+    imagem.addEventListener("click", () => {
+      movendo = false; // Para o movimento
+      imagem.src =
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyMC87z6c18cIWQ_1gXvjGl7Er5WLON5YOkyUvIvX7RzvhadsKyRKVwdcpciuerAq0GsbBTrA4DTD59MoqIpjjce59ztDpvP54OF22j6HADvvb_SN-TdQgO2JDBmOQ43q3ZUcaaAxastyrNQY2DuV4DhMh2Yf8ge4CRtHfEyCAiUbB4NF716PN85EV2LZw/s16000/dead.png"; // Mude o link para a nova imagem
+      setTimeout(() => {
+        imagem.style.display = "none"; // Some após 3 segundos
+      }, 3000);
+    });
+  
+    setInterval(moverImagem, 8);
+  </script>
+  <style>
+    #walkinguto {
+      position: absolute;
+      z-index: 9990;
+    }
+  </style>
+  
+  <!-------------------------------------------------------- KO-FI --------------->
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('harutofun', {
+      'type': 'floating-chat',
+      'floating-chat.donateButton.text': 'Offering',
+      'floating-chat.donateButton.background-color': '#000000',
+      'floating-chat.donateButton.text-color': '#fff'
+    });
+  </script>
+
+  <!-------------------------------------------------------- BLACK BG MIDDLE --------------->
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEix5rjI7ceoic8El4hI1Af9PmDLXysWyerd7d4wFUXRSMk0hKuqbIdxmbZCeE93NMlcs1ZiUxPu8UMwehRt4g0HJYeFMa46NffokCijs6CRGmnaqLNtT09lNQ8-a9OPFfWlUf-ZksAgbFfmPhwfaaFlro-Mn8rtpcmbBJvUELkqxI0kAig-b4IzMc1bI7DX/s16000/black%20bg%20middle.png" />
+
+  <!-------------------------------------------------------- LOADING BAR SUPER SPACEMAIL --------------->
+  <div id="loading-container" style="top: 393px; left: -446px; z-index: 50;
+  font-family: 'harutofunregular', sans-serif; font-size: 14px; color: white; width: 500px; 
+  padding: 10px; text-align: left; overflow: hidden; white-space: nowrap; position: absolute;">
+      <div id="loading-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <div id="loading-text" style="text-align: left;">MAKING GAME:</div>
+          <div id="game-title" style="text-align: right;">SUPER SPACEMAIL</div>
+      </div>
+      <div id="loading-bar-container" style="display: flex; align-items: center;">
+          <div id="loading-percentage" style="margin-right: 10px; color: white; min-width: 40px;">0%</div>
+          <div id="loading-blocks" style="color: white; font-size: 20px; text-align: left; flex-grow: 1;"></div>
+      </div>
+  </div>
+  <script>
+      // define progress
+      let currentProgress = 91; // total
+      let startingProgress = 0; // initial
+  
+      // update the loading bar
+      function updateLoadingBar() {
+      const loadingPercentage = document.getElementById("loading-percentage");
+      const loadingBlocks = document.getElementById("loading-blocks");
+  
+      // update the exibid version
+      loadingPercentage.textContent = `${startingProgress}%`;
+  
+      // math to percentage
+      loadingBlocks.textContent = '|'.repeat(startingProgress);
+  
+      // increase until total value
+      if (startingProgress < currentProgress) {
+          startingProgress++;
+          setTimeout(updateLoadingBar, 50); // Tempo entre os updates
+      }
+  }
+  
+  // play
+  updateLoadingBar();
+  </script>
+  <div id="background-loading" style="top: 380px; left: -450px; z-index: 30; 
+  width: 544px; height: 97px; overflow: hidden; position: absolute;">
+  <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicdQRCJwn_ryC2OCU0KHbfu2FMHdiri9AjkQGedNwlw0TxH3hqYo8GOmxeDADD1rr_Oip3VrAGxf3Gzb0Yr6HtGKvUZELtfUIxjbnnLfHGMMoIt-c9u3zBCS93x5UTG7j_GHTRgSf-E_qrEoQhGhCHtUZvo-eiyEDpYsr-zi-BLBT9Lv56Lz4PWMdj5Qyz/s16000/loading%20thingy.gif" />
+  </div>
+
+  <!-------------------------------------------------------- NEXT GAME BAR --------------->
+  <div id="loading-container2" style="top: 353px; left: -486px; z-index: 20;
+  font-family: 'harutofunregular', sans-serif; font-size: 14px; color: white; width: 500px; 
+  padding: 10px; text-align: left; overflow: hidden; white-space: nowrap; position: absolute;">
+      <div id="loading-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <div id="loading-text" style="text-align: left;">NEXT GAME:</div>
+          <div id="game-title" style="text-align: right;">LOST IN CODE</div>
+      </div>
+      <div id="loading-bar-container2" style="display: flex; align-items: center;">
+          <div id="loading-percentage2" style="margin-right: 10px; color: white; min-width: 40px;">0%</div>
+          <div id="loading-blocks2" style="color: white; font-size: 20px; text-align: left; flex-grow: 1;"></div>
+      </div>
+  </div>
+  <script>
+      // define progress
+      let currentProgress2 = 50; // total
+      let startingProgress2 = 0; // initial
+  
+      // update the loading bar
+      function updateLoadingBar2() {
+      const loadingPercentage2 = document.getElementById("loading-percentage2");
+      const loadingBlocks2 = document.getElementById("loading-blocks2");
+  
+      // update the exibid version
+      loadingPercentage2.textContent = `${startingProgress2}%`;
+  
+      // math to percentage
+      loadingBlocks2.textContent = '|'.repeat(startingProgress2);
+  
+      // increase until total value
+      if (startingProgress2 < currentProgress2) {
+          startingProgress2++;
+          setTimeout(updateLoadingBar2, 50); // Tempo entre os updates
+      }
+  }
+  
+  // play
+  updateLoadingBar2();
+  </script>
+  <div id="background-loading-game-2" style="top: 340px; left: -490px; z-index: 10; 
+  width: 544px; height: 97px; overflow: hidden; position: absolute;">
+  <img id="imagem-fundo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrSTXe4GU31QpHIWIOOJFir1cdrz6B0rR4WPL5BY8Ay_U184JDffWAfRm0lZFLoAt44cG071LYKEbQr3HhsFX-yCjq9qHpZW4r7UCenFAFHTaaY0mMC5B4mTRb87gmLMQyXt6FCWib5K0OXhNHDYDlaZ-vKfIdYRYdXNGy32buLLDtZknItodqlz5CAKVX/s16000/loading%20normal.gif" />
+  </div>
+
+  <!-------------------------------------------------------- NEW MII -------------------->
+  <div id="characterWidget" style="width: 350px; height: 200px; overflow: hidden; position: absolute; top: 400px; left: 800px;" >
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1cgvYV6qlTds8VVe5QYgwjxSdPL-Mg9a-IbzsKi7FqmwYjMF-Hr9oyUnDaSCackS77n8fQcIOt4i8R8osQ3LUNX8bBUT67VWJOKUTPEON5AcwCIasD09RsUfy91XZpqqhItD4tKwwqnblCDVdfih5KwhhXc1o17v1kJH9GiSN_d4cd1fY9NYAVQDQ_xdv/s1600/NO%20SIGNAL.gif" alt="security cam" id="characterGif" />
+  </div>
+  <script>
+      const gifElement = document.getElementById('characterGif');
+      const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4CBkKnrXiZC_rs84P8nexunH9gDLM8qf8reRDAu3aYJyeZWGqpHBHXEwpxg6kGoloEYcBb2puFUJN/pub?output=csv'; // URL do CSV
+      
+      // GIFS TO BE RANDOMIZED YAY
+      const randomGifs = [
+        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s1600/Sprite-0001.gif',
+        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif',
+        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUxKjOeQer9TpjKnJXhByFNdrLG1bpv-M-P1RT8TZ8riETMcz-eEOKwcw3dtjfSkDXFbGbasR1B7Z_WsxKSwAC4vicIRPn9whlCZJr6G1yI63xug2VeOyFBrT3LHICHdKb8JsG6kCVSzV-fprmh1DA0oCWQErQjtEANFxEUxPEDk6OaKhsITJ2EI0dPdBD/s1600/mold.gif',
+        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxPTH0-kbqU5XNDhkU-fu27N6zVskKQsU9AAps3VK7qkm9Z3dY1VHTDWWjZeIpuxLY1zLMwVp3jNTlUzufoT1_p_Fdl6cCQ9T5MbXp9yAosyP80nJWWmmIA5PaJUJF2vZqKoMqYbukRp1JqVmB_MZdyLjymYMe1tzroGVsJXWnlvpUkdFtzD-WKVJxE_w9/s1600/ramen1.gif',
+        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEgjRfBgGmuVMi3-eyLDg2EICUxfxrMdbm7-k05NIgqCEFoNxkp6_UMpNvNgYIT1-FTea26SN1XuQ30zpsxX6aPX7oBJBgYgv3J_sSw2s0s26B7cbW3WKt_TyVQRrBevEP7gwAbiq6d17cpqQ5LMED98PiERtgGg8d_cyd1ahhKqcttCCNJFDCQh6aiJZt/s1600/mold3.gif',
+      ];
+  
+      // LOAD BASED ON TAG OR RANDOMIZED GIF
+      async function loadGif() {
+        try {
+          const response = await fetch(csvUrl);
+          const csvText = await response.text();
+          const rows = csvText.split('\n');
+          const data = rows.map(row => row.split(','));
+  
+          // store tag
+          let tag = '';
+  
+          // integer??? to find the ACTIVE! word i guess
+          for (let i = 0; i < data.length; i++) {
+            // verify if the furst column has "ACTIVE!"
+            if (data[i][0] && data[i][0].toLowerCase() === 'active!') {
+              tag = data[i][1]; // tag is in the second line 
+              break; // close look after finding
+            }
+          }
+
+          // verify if the tag found, otherwise go to random
+          if (tag) {
+            switch (tag) {
+              case 'Art':
+                gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtDxsJ1bG3N-sa7cr8AwxsHMKiq4_iARF6rcF-DWQEx1quYeOF26Gy0SOkzE_3lSbbm9sPrMvEOoZ8hCDashsYxe67yx48LyYBw_RtdfepL0nc2VARQ6odvmJVxozrX0Prn-jC0RJb22YiJhyMPQ2UpghI3VIQoi8lbkCKDMd_oL7u64g5xJ_846-XNS7F/s1600/blog%20version.gif';
+                break;
+              case 'Code':
+                gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif';
+                break;
+              case 'Music':
+                gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif';
+                break;
+              default:
+                gifElement.src = randomGifs[Math.floor(Math.random() * randomGifs.length)];
+            }
+          } else {
+            // randomize if there's no task "ACTIVE!"
+            gifElement.src = randomGifs[Math.floor(Math.random() * randomGifs.length)];
+          }
+        } catch (error) {
+          console.error('Erro ao carregar o GIF:', error);
+          gifElement.src = randomGifs[Math.floor(Math.random() * randomGifs.length)];
+        }
+      }
+      
+      // call the function after loading the page
+      loadGif();
+  </script>
+  <style>
+      /* WIDGET STYLE */
+      #characterWidget {
+        top: 200px; 
+        left: 400px; 
+        z-index: 1000; /* depth */
+      }
+  
+      #characterGif {
+        /* GIF STYLE */
+        top: 200px; 
+        left: 20px; 
+        z-index: 1000; /* depth? */
+      }
+  </style>
+</img
+></div>
+
+
+
+
+
+<!-- HOME PAGE -->
 <script>
     var urlAtual = window.location.href;
-    
     if (urlAtual === "https://www.haruto.fun/") { //home page
-      document.getElementById("bluesky").style.display = "block";
+        document.getElementById("home_widgets").style.display = "block";
     } else { //other pages
-      document.getElementById("bluesky").style.display = "none";
+        document.getElementById("home_widgets").style.display = "none";
     }
-</script>
-    <script>
-      window.addEventListener('load', function() {
-          const blueskyWidget = document.querySelector('#bluesky');
-          if (blueskyWidget) {
-              blueskyWidget.style.fontFamily = "'harutofunregular', sans-serif";
-              const widgetChildren = blueskyWidget.querySelectorAll('*');
-              widgetChildren.forEach(child => {
-                  child.style.fontFamily = "'harutofunregular', sans-serif";
-              });
-          }
-      });
-  </script>]]></b:widget-setting>
+</script>]]></b:widget-setting>
               </b:widget-settings>
               <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -1557,7 +1760,7 @@ head.appendChild(script);
   <b:include name='quickedit'/>
 </b:includable>
             </b:widget>
-            <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+            <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog' version='1'>
               <b:widget-settings>
                 <b:widget-setting name='showDateHeader'>true</b:widget-setting>
                 <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
@@ -1572,7 +1775,7 @@ head.appendChild(script);
                 <b:widget-setting name='reactionsLabel'/>
                 <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
                 <b:widget-setting name='style.layout'>1x1</b:widget-setting>
-                <b:widget-setting name='showLabels'>true</b:widget-setting>
+                <b:widget-setting name='showLabels'>false</b:widget-setting>
                 <b:widget-setting name='showLocation'>false</b:widget-setting>
                 <b:widget-setting name='showTimestamp'>false</b:widget-setting>
                 <b:widget-setting name='postsPerAd'>1</b:widget-setting>
@@ -1801,12 +2004,6 @@ head.appendChild(script);
   </b:if>
 </b:includable>
               <b:includable id='feedLinksBody' var='links'>
-  <div class='feed-links'>
-  <data:feedLinksMsg/>
-  <b:loop values='data:links' var='f'>
-     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
-  </b:loop>
-  </div>
 </b:includable>
               <b:includable id='iframe_comments' var='post'>
   <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
@@ -1983,17 +2180,9 @@ head.appendChild(script);
 </b:includable>
               <b:includable id='nextprev'>
   <div class='blog-pager' id='blog-pager'>
-    <b:if cond='data:newerPageUrl'>
-      <span id='blog-pager-newer-link'>
-      <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/></a>
-      </span>
-    </b:if>
+    
 
-    <b:if cond='data:olderPageUrl'>
-      <span id='blog-pager-older-link'>
-      <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'><data:olderPageTitle/></a>
-      </span>
-    </b:if>
+
 
     <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
 
@@ -2398,22 +2587,6 @@ head.appendChild(script);
   </div>
 </b:includable>
             </b:widget>
-            <b:widget id='HTML5' locked='false' title='' type='HTML'>
-              <b:widget-settings>
-                <b:widget-setting name='content'><![CDATA[<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1xibLrjkkeLlWKoWx6NNih?utm_source=generator&theme=1" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>]]></b:widget-setting>
-              </b:widget-settings>
-              <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-  <b:include name='quickedit'/>
-</b:includable>
-            </b:widget>
           </b:section>
         </div>
         </div>
@@ -2435,7 +2608,7 @@ head.appendChild(script);
         <div class='column-right-inner'>
           <aside>
           <macro:include id='main-column-right-sections' name='sections'>
-            <macro:param default='2' name='num' value='1'/>
+            <macro:param default='2' name='num' value='0'/>
             <macro:param default='sidebar-right' name='idPrefix'/>
             <macro:param default='sidebar' name='class'/>
             <macro:param default='true' name='includeBottom'/>
@@ -2469,16 +2642,16 @@ head.appendChild(script);
     <div class='fauxborder-right footer-fauxborder-right'/>
     <div class='region-inner footer-inner'>
       <macro:include id='footer-sections' name='sections'>
-        <macro:param default='2' name='num' value='3'/>
+        <macro:param default='2' name='num' value='1'/>
         <macro:param default='footer' name='idPrefix'/>
         <macro:param default='foot' name='class'/>
         <macro:param default='false' name='includeBottom'/>
       </macro:include>
       <!-- outside of the include in order to lock Attribution widget -->
       <b:section class='foot' id='footer-3' name='Footer' showaddelement='no'>
-        <b:widget id='Attribution1' locked='true' title='' type='Attribution'>
+        <b:widget id='Attribution1' locked='false' title='' type='Attribution'>
           <b:widget-settings>
-            <b:widget-setting name='copyright'>All rights reserved &#169; 2024 haruto bessa</b:widget-setting>
+            <b:widget-setting name='copyright'>All rights reserved &#169; 2024 haruto.fun</b:widget-setting>
           </b:widget-settings>
           <b:includable id='main'>
     <div class='widget-content' style='text-align: center;'>
@@ -2489,30 +2662,6 @@ head.appendChild(script);
 
     <b:include name='quickedit'/>
   </b:includable>
-        </b:widget>
-        <b:widget id='HTML2' locked='false' title='' type='HTML'>
-          <b:widget-settings>
-            <b:widget-setting name='content'><![CDATA[<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('harutobessa', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Tip Me',
-    'floating-chat.donateButton.background-color': '#000000',
-    'floating-chat.donateButton.text-color': '#fff'
-  });
-</script>]]></b:widget-setting>
-          </b:widget-settings>
-          <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-  <b:include name='quickedit'/>
-</b:includable>
         </b:widget>
       </b:section>
     </div>
@@ -2580,406 +2729,4 @@ head.appendChild(script);
   </macro:if>
 </macro:includable>
 
-<b:section-contents id='sidebar-right-1'>
-  <b:widget id='HTML3' locked='false' title='' type='HTML'>
-    <b:widget-settings>
-      <b:widget-setting name='content'><![CDATA[<div id="meu-widget">
-    <img id="gif-principal" src="" alt="haruto box" />
-  </div>
-  
-  <script>
-  const gifPrincipal = document.getElementById('gif-principal');
-  
-  const gifsRotina = [
-    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s1600/Sprite-0001.gif',
-    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif',
-    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUxKjOeQer9TpjKnJXhByFNdrLG1bpv-M-P1RT8TZ8riETMcz-eEOKwcw3dtjfSkDXFbGbasR1B7Z_WsxKSwAC4vicIRPn9whlCZJr6G1yI63xug2VeOyFBrT3LHICHdKb8JsG6kCVSzV-fprmh1DA0oCWQErQjtEANFxEUxPEDk6OaKhsITJ2EI0dPdBD/s1600/mold.gif',
-    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxPTH0-kbqU5XNDhkU-fu27N6zVskKQsU9AAps3VK7qkm9Z3dY1VHTDWWjZeIpuxLY1zLMwVp3jNTlUzufoT1_p_Fdl6cCQ9T5MbXp9yAosyP80nJWWmmIA5PaJUJF2vZqKoMqYbukRp1JqVmB_MZdyLjymYMe1tzroGVsJXWnlvpUkdFtzD-WKVJxE_w9/s1600/ramen1.gif',
-    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEgjRfBgGmuVMi3-eyLDg2EICUxfxrMdbm7-k05NIgqCEFoNxkp6_UMpNvNgYIT1-FTea26SN1XuQ30zpsxX6aPX7oBJBgYgv3J_sSw2s0s26B7cbW3WKt_TyVQRrBevEP7gwAbiq6d17cpqQ5LMED98PiERtgGg8d_cyd1ahhKqcttCCNJFDCQh6aiJZt/s1600/mold3.gif',
-    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtDxsJ1bG3N-sa7cr8AwxsHMKiq4_iARF6rcF-DWQEx1quYeOF26Gy0SOkzE_3lSbbm9sPrMvEOoZ8hCDashsYxe67yx48LyYBw_RtdfepL0nc2VARQ6odvmJVxozrX0Prn-jC0RJb22YiJhyMPQ2UpghI3VIQoi8lbkCKDMd_oL7u64g5xJ_846-XNS7F/s1600/blog%20version.gif',
-    // ... adicione mais URLs de GIFs aqui
-  ];
-  
-  function escolherGifAleatorio() {
-    const indiceAleatorio = Math.floor(Math.random() * gifsRotina.length);
-    gifPrincipal.src = gifsRotina[indiceAleatorio];
-  }
-  
-  // Escolhe um GIF aleatório ao carregar a página
-  escolherGifAleatorio();
-  
-    // Atualiza o GIF a cada 2 minutos (120000 milissegundos)
-    setInterval(escolherGifAleatorio, 30000); 
-  </script>
-
-
-<img id="imagemAndante" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhslMfK0EcONOnJ_92R7eR5GUuE1ydrG-SSiQz_tt_sERmvOpWropJjY8OMrnGqHmjXrrB-rRpF0Vm8urkToz_kmZx0TaEOWk9sGncGJOlnTn7EetE8q0MSLiyn9lEM42uePf6uDKdLMrb794iDhbHp8vwjLWDqZ1q5Q4o1e2tJ5wM8eAkDqIc3aaxxh7gH/s16000/dance2.gif" alt="Imagem Andante" />
-
-<script>
-  const imagem = document.getElementById('imagemAndante');
-  let posicaoX = 0;
-  let posicaoY = 0;
-  let direcaoX = 1; 
-  let direcaoY = 1; 
-
-  // Defina as coordenadas da área em que a imagem pode se mover
-  const areaXInicial = -850; // Coordenada X inicial da área
-  const areaYInicial = -200;  // Coordenada Y inicial da área
-  const larguraArea = 1250;   // Largura da área em pixels
-  const alturaArea = 1500;    // Altura da área em pixels
-
-  function moverImagem() {
-    posicaoX += direcaoX;
-    posicaoY += direcaoY;
-
-    // Verifica se a imagem atingiu as bordas da área definida
-    if (posicaoX + imagem.width > areaXInicial + larguraArea || posicaoX < areaXInicial) {
-      direcaoX = -direcaoX; 
-    }
-    if (posicaoY + imagem.height > areaYInicial + alturaArea || posicaoY < areaYInicial) {
-      direcaoY = -direcaoY; 
-    }
-
-    imagem.style.left = posicaoX + 'px';
-    imagem.style.top = posicaoY + 'px';
-  }
-
-  setInterval(moverImagem, 8); 
-</script>
-
-<style>
-  #imagemAndante {
-    position: absolute; 
-    z-index: 9999; 
-  }
-</style>
-
-<div class="gif-container" id="gifContainer" style="display: none;">
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhblYG5yKqeghQ61ZXdKDCWW4EIRsXDYWIoJSWRu3Lz-wt6OHA64F9HxTWs0C4LwwLxyIY3Xuxn7Rjhk_HTlS7d9dYz5UkuH1UPLk0LDyeszqE9ml3n7BClxvYMs6UGsLHokmuc5AasgSjqYWrxMNRm-gtXrZU4413nNMEEgS3tHGvozniFWNTRkayMrAgk/s16000/Sprite-0002.gif" alt="GIF animado" class="animated-gif" />
-</div>
-
-<style>
-  .gif-container {
-    position: relative;
-    z-index: -50; 
-  }
-
-  .animated-gif {
-    position: absolute;
-    top: -70px; 
-    left: 0;
-
-      animation: move-right 5s infinite;
-        
-  }
-
-  @keyframes move-right {
-    from {
-      left: -1800px;
-      opacity: 0;
-      transform: scaleX(1);
-    }
-    3% {
-      opacity: 1;
-      transform: scaleX(1);
-    }
-    95% {
-      opacity: 1;
-      transform: scaleX(1);
-    }
-    to {
-      left: -400px;
-      opacity: 0;
-      transform: scaleX(0);
-    }
-  }
-</style>
-
-<script>
-  function toggleGifDisplay() {
-    var gifContainer = document.getElementById("gifContainer");
-
-    // Mostra o widget
-    gifContainer.style.display = "block";
-
-    // Após 10 segundos (ou duração desejada), oculta o widget novamente
-    setTimeout(function() {
-      gifContainer.style.display = "none";
-    }, 5000); // Mantém o GIF visível por 10 segundos (ajustável)
-  }
-
-  // Exibe o widget a cada 3 minutos (40000 ms)
-  setInterval(toggleGifDisplay, 40000 );
-</script>]]></b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-  <b:include name='quickedit'/>
-</b:includable>
-  </b:widget>
-  <b:widget id='Label1' locked='false' title='Posts' type='Label'>
-    <b:widget-settings>
-      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
-      <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>achievement,devlog,hiatus,notes,releases,research,update</b:widget-setting>
-      <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
-      <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2><data:title/></h2>
-  </b:if>
-  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-    <b:if cond='data:display == &quot;list&quot;'>
-      <ul>
-        <b:loop values='data:labels' var='label'>
-          <li>
-            <b:if cond='data:blog.url == data:label.url'>
-              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-            <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
-            </b:if>
-            <b:if cond='data:showFreqNumbers'>
-              <span dir='ltr'>(<data:label.count/>)</span>
-            </b:if>
-          </li>
-        </b:loop>
-      </ul>
-    <b:else/>
-      <b:loop values='data:labels' var='label'>
-        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
-          <b:if cond='data:blog.url == data:label.url'>
-            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-          <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
-          </b:if>
-          <b:if cond='data:showFreqNumbers'>
-            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
-          </b:if>
-        </span>
-      </b:loop>
-    </b:if>
-    <b:include name='quickedit'/>
-  </div>
-</b:includable>
-  </b:widget>
-  <b:widget id='Label2' locked='false' title='Games&apos; Posts' type='Label'>
-    <b:widget-settings>
-      <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
-      <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>Super SpaceMail,lost in code</b:widget-setting>
-      <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
-      <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2><data:title/></h2>
-  </b:if>
-  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
-    <b:if cond='data:display == &quot;list&quot;'>
-      <ul>
-        <b:loop values='data:labels' var='label'>
-          <li>
-            <b:if cond='data:blog.url == data:label.url'>
-              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-            <b:else/>
-              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
-            </b:if>
-            <b:if cond='data:showFreqNumbers'>
-              <span dir='ltr'>(<data:label.count/>)</span>
-            </b:if>
-          </li>
-        </b:loop>
-      </ul>
-    <b:else/>
-      <b:loop values='data:labels' var='label'>
-        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
-          <b:if cond='data:blog.url == data:label.url'>
-            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
-          <b:else/>
-            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
-          </b:if>
-          <b:if cond='data:showFreqNumbers'>
-            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
-          </b:if>
-        </span>
-      </b:loop>
-    </b:if>
-    <b:include name='quickedit'/>
-  </div>
-</b:includable>
-  </b:widget>
-  <b:widget id='FeaturedPost1' locked='false' title='🏅 LAST ACHIEVEMENT 🏅' type='FeaturedPost'>
-    <b:widget-settings>
-      <b:widget-setting name='showSnippet'>true</b:widget-setting>
-      <b:widget-setting name='showPostTitle'>false</b:widget-setting>
-      <b:widget-setting name='postId'>8119336757068482752</b:widget-setting>
-      <b:widget-setting name='showFirstImage'>false</b:widget-setting>
-      <b:widget-setting name='useMostRecentPost'>false</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <!-- Only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <b:include name='content'/>
-
-  <b:include name='quickedit'/>
-</b:includable>
-    <b:includable id='content'>
-  <div class='post-summary'>
-    <b:if cond='data:showPostTitle and data:postTitle != &quot;&quot;'>
-      <h3><a expr:href='data:postUrl'><data:postTitle/></a></h3>
-    </b:if>
-    <b:if cond='data:showSnippet and data:postSummary != &quot;&quot;'>
-      <p>
-        <data:postSummary/>
-      </p>
-    </b:if>
-    <b:if cond='data:showFirstImage and data:postFirstImage != &quot;&quot;'>
-      <img class='image' expr:src='data:postFirstImage'/>
-    </b:if>
-  </div>
-
-  <style type='text/css'>
-    .image {
-      width: 100%;
-    }
-  </style>
-</b:includable>
-  </b:widget>
-  <b:widget id='LinkList1' locked='false' title='Socials' type='LinkList'>
-    <b:widget-settings>
-      <b:widget-setting name='link-3'>https://www.youtube.com/channel/UC8Do232-NaBbiDSmJRrmVkg</b:widget-setting>
-      <b:widget-setting name='sorting'>NONE</b:widget-setting>
-      <b:widget-setting name='text-1'>Spotify</b:widget-setting>
-      <b:widget-setting name='link-1'>https://open.spotify.com/artist/7kbfVpwqInTlCxwfNFXjlJ?si=BsTDvAZNRJiNvGAMH3WrnA</b:widget-setting>
-      <b:widget-setting name='text-0'>Bluesky</b:widget-setting>
-      <b:widget-setting name='link-2'>https://www.amazon.com/stores/Haruto-Bessa/author/B0CM9VJWLH?</b:widget-setting>
-      <b:widget-setting name='text-3'>Youtube</b:widget-setting>
-      <b:widget-setting name='link-0'>https://bsky.app/profile/haruto.fun</b:widget-setting>
-      <b:widget-setting name='text-2'>Amazon</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-
-<b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
- <div class='widget-content'>
-   <ul>
-     <b:loop values='data:links' var='link'>
-       <li><a expr:href='data:link.target'><data:link.name/></a></li>
-     </b:loop>
-   </ul>
-   <b:include name='quickedit'/>
- </div>
-</b:includable>
-  </b:widget>
-  <b:widget id='Image2' locked='false' title='tip me a hot choco' type='Image'>
-    <b:widget-settings>
-      <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEhJgksXr2qKvipAHXsXAzZp2zyxuP1h4rtdhiXnztj_kE9LsS80Gm0q1Wcoo0zCQ-_RzsK___yr9EOC_OCZbbO7hHt-4l_Q23k2tzcQojjaeX8sIDf_1M7dswk6iRhcbSBHRsZHjqsziBSeupWeSvXBhB44bgu1ne2Cejv7LSZmH9qOEv6nLqEZfJm875Yi=s71</b:widget-setting>
-      <b:widget-setting name='displayHeight'>62</b:widget-setting>
-      <b:widget-setting name='sectionWidth'>196</b:widget-setting>
-      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
-      <b:widget-setting name='displayWidth'>71</b:widget-setting>
-      <b:widget-setting name='link'>https://ko-fi.com/harutobessa</b:widget-setting>
-      <b:widget-setting name='caption'>(Only if you can tho)</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-    <b:if cond='data:title != &quot;&quot;'>
-      <h2><data:title/></h2>
-    </b:if>
-    <div class='widget-content'>
-      <b:tag cond='data:link' expr:href='data:link' name='a'>
-        <img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='data:sourceUrl' expr:width='data:width'/>
-      </b:tag>
-      <br/>
-      <b:if cond='data:caption'>
-        <span class='caption'><data:caption/></span>
-      </b:if>
-    </div>
-    <b:include name='quickedit'/>
-  </b:includable>
-  </b:widget>
-</b:section-contents><b:section-contents id='footer-1'/><b:section-contents id='footer-2-1'>
-  <b:widget id='Stats1' locked='false' title='Travelers seen this week:' type='Stats'>
-    <b:widget-settings>
-      <b:widget-setting name='showGraphicalCounter'>false</b:widget-setting>
-      <b:widget-setting name='showAnimatedCounter'>true</b:widget-setting>
-      <b:widget-setting name='showSparkline'>false</b:widget-setting>
-      <b:widget-setting name='sparklineStyle'>WHITE_TRANSPARENT</b:widget-setting>
-      <b:widget-setting name='timeRange'>LAST_WEEK</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
-  <div class='widget-content'>
-    <!-- Content is going to be visible when data will be fetched from server. -->
-    <div expr:id='data:widget.instanceId + &quot;_content&quot;' style='display: none;'>
-      <!-- Counter and image will be injected later via AJAX call. -->
-      <b:if cond='data:showSparkline'>
-        <script src='https://www.gstatic.com/charts/loader.js' type='text/javascript'/>
-        <span expr:id='data:widget.instanceId + &quot;_sparklinespan&quot;' style='display:inline-block; width:75px; height:30px'/>
-      </b:if>
-      <span expr:class='&quot;counter-wrapper &quot; + (data:showGraphicalCounter ? &quot;graph-counter-wrapper&quot; : &quot;text-counter-wrapper&quot;)' expr:id='data:widget.instanceId + &quot;_totalCount&quot;'>
-      </span>
-      <b:include name='quickedit'/>
-    </div>
-  </div>
-</b:includable>
-  </b:widget>
-</b:section-contents><b:section-contents id='footer-2-2'>
-  <b:widget id='Image3' locked='false' title='you found the art goblin' type='Image'>
-    <b:widget-settings>
-      <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEjsxl5PTBM7o2KNM_aWaTXG3q7uEz1Orwl7z36zDEJmNt3Gi0ZKHAYd4Sm_s0Qwm04khcxoD2tRSOGwudcQ6MfFOaorfZFuhUmkA8x4mxFePwYSwc9I1_QrnS_9i1JnY1A-zFN_6ndkv22GF4qqFxxMzpKMYGVQbZdue2XoiJS-I5FfoecgPPMWCZaNgR1x=s237</b:widget-setting>
-      <b:widget-setting name='displayHeight'>100</b:widget-setting>
-      <b:widget-setting name='sectionWidth'>273</b:widget-setting>
-      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
-      <b:widget-setting name='displayWidth'>237</b:widget-setting>
-      <b:widget-setting name='link'>https://harutobessa.tumblr.com/</b:widget-setting>
-      <b:widget-setting name='caption'/>
-    </b:widget-settings>
-    <b:includable id='main'>
-    <b:if cond='data:title != &quot;&quot;'>
-      <h2><data:title/></h2>
-    </b:if>
-    <div class='widget-content'>
-      <b:tag cond='data:link' expr:href='data:link' name='a'>
-        <img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='data:sourceUrl' expr:width='data:width'/>
-      </b:tag>
-      <br/>
-      <b:if cond='data:caption'>
-        <span class='caption'><data:caption/></span>
-      </b:if>
-    </div>
-    <b:include name='quickedit'/>
-  </b:includable>
-  </b:widget>
-</b:section-contents><b:section-contents id='footer-2-3'>
-  <b:widget id='Translate1' locked='false' title='Pick your language:' type='Translate'>
-    <b:widget-settings>
-      <b:widget-setting name='displayMode'>VERTICAL</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div id='google_translate_element'/>
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: &#39;<data:pageLanguage/>&#39;,
-        autoDisplay: &#39;true&#39;,
-        layout: google.translate.TranslateElement.InlineLayout.<data:layout/>
-      }, &#39;google_translate_element&#39;);
-    }
-  </script>
-  <script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'/>
-  <b:include name='quickedit'/>
-</b:includable>
-  </b:widget>
-</b:section-contents></html>
+<b:section-contents id='footer-1'/></html>
