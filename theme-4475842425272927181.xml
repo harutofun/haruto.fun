@@ -573,7 +573,7 @@ body .main-inner .Blog {
   background: $(date.background);
 
   position: $(date.position);
-  bottom: 10%;
+  bottom: -5%;
   $(date.side): $(date.header.position);
   text-shadow: 0 0 $(title.shadow.spread) #000000;
 }
@@ -1341,6 +1341,7 @@ head.appendChild(script);
             <b:widget id='HTML1' locked='false' title='' type='HTML'>
               <b:widget-settings>
                 <b:widget-setting name='content'><![CDATA[<!-------------------------------------------------------- ALL HOME WIDGETS ---------->
+<!-- nothing hidden in here i'm too dumb for that sorry -->
 <div id="home_widgets">
 
 
@@ -1352,8 +1353,57 @@ head.appendChild(script);
 
 
 
-
-
+  <!-------------------------------------------------------- BIRB --------------->
+  <div id="birb-widget-1" style="position: absolute; z-index: 999; top: 447px; left: 640px;">
+    <img id="birb-1" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqLJK9z6qPQQmZV8kaKSHPxBe3AFOYUwvxAh-sdnobTO01plgcs8CjLzalwLO9Eu8BRm1HP3lnxMZlNj6so4258KmkjPZ-17P6u_KalAbfchHv2jbhxG-zIzsglpSZplgLzpvNiHVYllOPGldsVt95F3OWkw8GXC3_86LYdeU3QTFoks_QvWAZE6c7EJum/s1600/mom%20birb.gif" alt="birb-1" 
+ style="position: absolute; transform: translate(-50%, -50%); transition: transform 0.5s ease; 
+                image-rendering: pixelated;" />
+  </div>
+  <script>
+    const birb_1 = document.getElementById("birb-1");
+    let birb_flying_1 = false; 
+    let birb_timer_1; 
+  
+    // limit pos
+    const birb_random_pos_1 = () => {
+      const deslocamentoMax = 200; 
+      const deslocamentoX = (Math.random() - 0.5) * deslocamentoMax; 
+      const deslocamentoY = (Math.random() - 0.5) * deslocamentoMax; 
+      return { x: deslocamentoX, y: deslocamentoY };
+    };
+  
+    // mouse 
+    birb_1.addEventListener("mouseover", () => {
+      if (!birb_flying_1) {
+        birb_flying_1 = true;
+        clearTimeout(birb_timer_1); 
+  
+        // change to birb flying
+        birb_1.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDscoOeES4OrlWcL2Op21o0PHk09CPPuN_ZbxZSmSc3cPwMUQ37UdI8iQHiMdAtbiZafe0SFc8QE8KtqSZXcCpdWLsZWvFduYKexvTOgMhMdtiw1B-2dXWB_SEnpQqXsQBp90dnx-Zu8TGdRCou0uZtNOQmJIEYv5HkofKCyLgox9U4LsvK4t9sVpvJeee/s1600/mom%20birb%202.gif";
+  
+        // new random pos
+        const newPos = birb_random_pos_1();
+        birb_1.style.transform = `translate(${newPos.x}px, ${newPos.y}px)`;
+      }
+    });
+  
+    // end
+    birb_1.addEventListener("transitionend", () => {
+      if (!birb_flying_1) {
+        birb_1.src = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqLJK9z6qPQQmZV8kaKSHPxBe3AFOYUwvxAh-sdnobTO01plgcs8CjLzalwLO9Eu8BRm1HP3lnxMZlNj6so4258KmkjPZ-17P6u_KalAbfchHv2jbhxG-zIzsglpSZplgLzpvNiHVYllOPGldsVt95F3OWkw8GXC3_86LYdeU3QTFoks_QvWAZE6c7EJum/s1600/mom%20birb.gif"; // Trocar para o GIF parado apenas depois de parar
+      }
+    });
+  
+    // timer
+    birb_1.addEventListener("mouseout", () => {
+      clearTimeout(birb_timer_1); 
+      birb_timer_1 = setTimeout(() => {
+        birb_flying_1 = false; 
+        birb_1.style.transform = "translate(-50%, -50%)"; 
+      }, 3000);
+    });
+  </script>
+  
 
   <!-------------------------------------------------------- SUPER SPACEMAIL --------------->
   <a href="https://store.steampowered.com/app/1870400/Super_SpaceMail/" 
@@ -1655,6 +1705,7 @@ head.appendChild(script);
   <div id="characterWidget" style="width: 350px; height: 200px; overflow: hidden; position: absolute; top: 400px; left: 800px;" >
       <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1cgvYV6qlTds8VVe5QYgwjxSdPL-Mg9a-IbzsKi7FqmwYjMF-Hr9oyUnDaSCackS77n8fQcIOt4i8R8osQ3LUNX8bBUT67VWJOKUTPEON5AcwCIasD09RsUfy91XZpqqhItD4tKwwqnblCDVdfih5KwhhXc1o17v1kJH9GiSN_d4cd1fY9NYAVQDQ_xdv/s1600/NO%20SIGNAL.gif" alt="security cam" id="characterGif" />
   </div>
+  <!-- ADD NEW STUFF HERE -->
   <script>
       const gifElement = document.getElementById('characterGif');
       const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4CBkKnrXiZC_rs84P8nexunH9gDLM8qf8reRDAu3aYJyeZWGqpHBHXEwpxg6kGoloEYcBb2puFUJN/pub?output=csv'; // URL do CSV
@@ -1665,7 +1716,6 @@ head.appendChild(script);
         'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif',
         'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUxKjOeQer9TpjKnJXhByFNdrLG1bpv-M-P1RT8TZ8riETMcz-eEOKwcw3dtjfSkDXFbGbasR1B7Z_WsxKSwAC4vicIRPn9whlCZJr6G1yI63xug2VeOyFBrT3LHICHdKb8JsG6kCVSzV-fprmh1DA0oCWQErQjtEANFxEUxPEDk6OaKhsITJ2EI0dPdBD/s1600/mold.gif',
         'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxPTH0-kbqU5XNDhkU-fu27N6zVskKQsU9AAps3VK7qkm9Z3dY1VHTDWWjZeIpuxLY1zLMwVp3jNTlUzufoT1_p_Fdl6cCQ9T5MbXp9yAosyP80nJWWmmIA5PaJUJF2vZqKoMqYbukRp1JqVmB_MZdyLjymYMe1tzroGVsJXWnlvpUkdFtzD-WKVJxE_w9/s1600/ramen1.gif',
-        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEgjRfBgGmuVMi3-eyLDg2EICUxfxrMdbm7-k05NIgqCEFoNxkp6_UMpNvNgYIT1-FTea26SN1XuQ30zpsxX6aPX7oBJBgYgv3J_sSw2s0s26B7cbW3WKt_TyVQRrBevEP7gwAbiq6d17cpqQ5LMED98PiERtgGg8d_cyd1ahhKqcttCCNJFDCQh6aiJZt/s1600/mold3.gif',
       ];
   
       // LOAD BASED ON TAG OR RANDOMIZED GIF
@@ -1694,11 +1744,8 @@ head.appendChild(script);
               case 'Art':
                 gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtDxsJ1bG3N-sa7cr8AwxsHMKiq4_iARF6rcF-DWQEx1quYeOF26Gy0SOkzE_3lSbbm9sPrMvEOoZ8hCDashsYxe67yx48LyYBw_RtdfepL0nc2VARQ6odvmJVxozrX0Prn-jC0RJb22YiJhyMPQ2UpghI3VIQoi8lbkCKDMd_oL7u64g5xJ_846-XNS7F/s1600/blog%20version.gif';
                 break;
-              case 'Code':
-                gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif';
-                break;
-              case 'Music':
-                gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjB9bmbbuND-5YUC5GPXebvcwxfaBG3ykz7K84sxeUDoTAw8aZJ7vqmHxi8ql_uptcWSsQ_Ir21wZrOqkLwuoXnLYQLNhDDwMCJ21sX5GK49ICqSEi6DDNXh6v2T7ICwhHf5tVKVCSfBXlK1Kf2UW2rZfLIEP90kEUdcJCUfwvgF5bq_3YO32eVMUn_LCfJ/s1600/Sprite-0001.gif';
+              case 'Away':
+                gifElement.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEgjRfBgGmuVMi3-eyLDg2EICUxfxrMdbm7-k05NIgqCEFoNxkp6_UMpNvNgYIT1-FTea26SN1XuQ30zpsxX6aPX7oBJBgYgv3J_sSw2s0s26B7cbW3WKt_TyVQRrBevEP7gwAbiq6d17cpqQ5LMED98PiERtgGg8d_cyd1ahhKqcttCCNJFDCQh6aiJZt/s1600/mold3.gif';
                 break;
               default:
                 gifElement.src = randomGifs[Math.floor(Math.random() * randomGifs.length)];
@@ -1741,7 +1788,7 @@ head.appendChild(script);
 <!-- HOME PAGE -->
 <script>
     var urlAtual = window.location.href;
-    if (urlAtual === "https://www.haruto.fun/") { //home page
+    if (urlAtual === "https://www.haruto.fun/" || urlAtual === "https://secretblogveryhidden.blogspot.com/") { //home page
         document.getElementById("home_widgets").style.display = "block";
     } else { //other pages
         document.getElementById("home_widgets").style.display = "none";
