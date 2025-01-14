@@ -1,0 +1,40 @@
+<img id="imagemAndante" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQwu9wFoek78gSn1IkSKtqT-BMDesM3a8-ms1Cy2c0zp_sDv47HByIEBExUhlvKksHLzSH5tI5hNeUhiV06xP-BkIX6aTe-QGvhdLPad6-aqp5F9upv_jNh_TsBf5HVgA9UfMahd7DGwENP0ms1xQMRgoh9v85auCNJwtWKIz7R6eNUFKlyVDdhHUvtUUt/s1600/dance2.gif" alt="Imagem Andante" />
+
+<script>
+  const imagem = document.getElementById('imagemAndante');
+  let posicaoX = 0;
+  let posicaoY = 0;
+  let direcaoX = 1; 
+  let direcaoY = 1; 
+
+  // Defina as coordenadas da área em que a imagem pode se mover
+  const areaXInicial = -850; // Coordenada X inicial da área
+  const areaYInicial = -200;  // Coordenada Y inicial da área
+  const larguraArea = 1250;   // Largura da área em pixels
+  const alturaArea = 1500;    // Altura da área em pixels
+
+  function moverImagem() {
+    posicaoX += direcaoX;
+    posicaoY += direcaoY;
+
+    // Verifica se a imagem atingiu as bordas da área definida
+    if (posicaoX + imagem.width > areaXInicial + larguraArea || posicaoX < areaXInicial) {
+      direcaoX = -direcaoX; 
+    }
+    if (posicaoY + imagem.height > areaYInicial + alturaArea || posicaoY < areaYInicial) {
+      direcaoY = -direcaoY; 
+    }
+
+    imagem.style.left = posicaoX + 'px';
+    imagem.style.top = posicaoY + 'px';
+  }
+
+  setInterval(moverImagem, 8); 
+</script>
+
+<style>
+  #imagemAndante {
+    position: absolute; 
+    z-index: 9999; 
+  }
+</style>

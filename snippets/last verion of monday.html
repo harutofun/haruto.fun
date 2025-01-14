@@ -1,0 +1,19 @@
+<div id="mytasks">
+    <iframe
+    src="https://view.monday.com/embed/7489446669-ed02802afb462dc27d3e75145c1e79f2?r=use1"
+    width="100%"
+    height="300"
+    style="border: 0; filter: invert(100%) hue-rotate(180deg);"
+  ></iframe
+  >
+</div>
+
+<script>
+var urlAtual = window.location.href;
+
+if (urlAtual === "https://www.haruto.fun/") { //home page
+  document.getElementById("mytasks").style.display = "block";
+} else { //other pages
+  document.getElementById("mytasks").style.display = "none";
+}
+</script>

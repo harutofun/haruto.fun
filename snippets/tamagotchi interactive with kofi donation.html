@@ -1,0 +1,61 @@
+<div id="meu-widget">
+  <img id="gif-principal" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s1600/Sprite-0001.gif" alt="GIF da rotina">
+
+  <div id="kofi-overlay" style="display: none;"> 
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('harutobessa', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Tip Me',
+        'floating-chat.donateButton.background-color': '#000000',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
+    </script>
+  </div>
+</div>
+
+<script>
+const gifPrincipal = document.getElementById('gif-principal');
+const kofiOverlay = document.getElementById('kofi-overlay');
+
+function atualizarGif() {
+  const horaAtual = new Date().getHours();
+
+  // Lógica para definir o GIF com base na hora (personalize aqui)
+  if (horaAtual >= 7 && horaAtual < 12) { 
+    gifPrincipal.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s196/Sprite-0001.gif'; 
+  } else if (horaAtual >= 12 && horaAtual < 15) {
+    gifPrincipal.src = 'URL_GIF_ALMOCO'; 
+  } else if (horaAtual >= 15 && horaAtual < 18) {
+    gifPrincipal.src = 'URL_GIF_TRABALHO';
+  } else {
+    gifPrincipal.src = 'URL_GIF_DESCANSANDO'; 
+  }
+}
+
+gifPrincipal.addEventListener('mouseover', () => {
+  // Lógica para trocar o GIF para a animação de "dar tchau" correspondente à rotina atual
+  if (gifPrincipal.src.includes('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdYFRuudqdTSLIaFJJe2vbRHU93adT-5-A_VRYm_lyHeaXnKjTCLEAmsO3a2rafYLXtNhGHroZH0lbFQxN0q35cAIwu3WKNrnCQ49WeOTu61NPZ49lTzhaOlKPqkHjCaLZCEwQ9VnHZJfvXejnWjaCwwSMMyvkWwccKhsB_LdDJtngFjPmdtd_hkXTG9Tf/s196/Sprite-0001.gif')) {
+    gifPrincipal.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHvCMrdERx7QHr9Tr1nENYi9MLBbCh_ZBhGFonM4w597ZNhLJMCpH-USyW4i0yVqrr0PtmIts8FZ5Df9ay6uRzWGput1yOppo2wM_qSKo59O1rXIjmTEtfXwnC0x2MlgPRrgaDm2-4om1-S0YPyu2-GoRBOOcSKykYrkh1l2DeK_J1O5ZPuNmfOqHfqh0B/s1600/Sprite-0002.gif';
+  } else if (gifPrincipal.src.includes('ALMOCO')) {
+    gifPrincipal.src = 'URL_GIF_ACENO_ALMOCO';
+  } // ... e assim por diante para as outras rotinas
+
+  setTimeout(() => {
+    atualizarGif(); 
+  }, 2000); // Tempo da animação de "dar tchau"
+});
+
+gifPrincipal.addEventListener('click', () => {
+  kofiOverlay.style.display = 'block'; 
+
+  // Lógica para trocar o GIF para a animação de "comendo" correspondente à rotina atual
+  if (gifPrincipal.src.includes('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHvCMrdERx7QHr9Tr1nENYi9MLBbCh_ZBhGFonM4w597ZNhLJMCpH-USyW4i0yVqrr0PtmIts8FZ5Df9ay6uRzWGput1yOppo2wM_qSKo59O1rXIjmTEtfXwnC0x2MlgPRrgaDm2-4om1-S0YPyu2-GoRBOOcSKykYrkh1l2DeK_J1O5ZPuNmfOqHfqh0B/s1600/Sprite-0002.gif')) {
+    gifPrincipal.src = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisGD4qUjOjZ8yS8BB183QLxvwP8_wXS43bqY_Eo5G04jMXLivXJdz98XNk9aDKL6TO5xGHAsuFcoZRHYwX0jyb8EHFBi5xvIjmeers0eTST7V0uOhw-Qv6eH6SO8s_SOjni2raAbDL2O95p-sOAtoK2LJMSHRW_tUVrhuzHna4Ko1N99vrmvTdSe2k6NCM/s1600/Sprite-0003.gif';
+  } else if (gifPrincipal.src.includes('ALMOCO')) {
+    gifPrincipal.src = 'URL_GIF_COMENDO_ALMOCO';
+  } // ... e assim por diante para as outras rotinas
+});
+
+atualizarGif(); 
+</script>
