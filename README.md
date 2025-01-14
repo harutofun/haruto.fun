@@ -1,2 +1,2 @@
-# website
- my website codes and stuff to save yay
+# haruto.fun
+ project inside blogger for a website that contains multiple games inside.
