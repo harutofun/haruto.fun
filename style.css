@@ -1,0 +1,42 @@
+html {
+    overflow: hidden;
+    -ms-overflow-style: none;
+} /* remove page scrolling */
+body::-webkit-scrollbar { 
+    display: none; 
+} /* hidde scroll */
+body {
+background: url('assets/img/home/background.png') repeat center center;
+background-size: auto;
+image-rendering: pixelated;
+image-rendering: crisp-edges;
+z-index: -1;
+} /* pixelate the body and add background */
+
+
+.hover img:active {
+    transform: scale(.9);
+}
+
+
+
+
+
+
+/* hands background */
+.hands{
+    display: flex;
+    justify-content: center;
+}
+.hands_bottom{
+    position: absolute;
+    z-index: 1;
+}
+.hands_middle{
+    position: absolute ;
+    z-index: 2;
+}
+.hands_top{
+    position: absolute ;
+    z-index: 3;
+}
