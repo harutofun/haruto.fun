@@ -11,6 +11,8 @@ background-size: auto;
 image-rendering: pixelated;
 image-rendering: crisp-edges;
 z-index: -1;
+display: flex;
+justify-content: center;
 } /* pixelate the body and add background */
 
 
@@ -18,8 +20,24 @@ z-index: -1;
     transform: scale(.9);
 }
 
+.spacemail {
+    position: absolute;
+    z-index: 10;
+    transition: content .1s, transform .1s, top .1s;
+    cursor: pointer;
+    top: 45%;
 
+}
 
+.spacemail:hover {
+    content: url(assets/img/home/ssm_thumb.gif);
+    top: 35%;
+}
+
+.spacemail:active {
+    height: 30%;
+    
+}
 
 
 
