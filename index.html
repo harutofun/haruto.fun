@@ -39,7 +39,9 @@
 
 
 
-
+<div class="eye">
+  <img src="assets/img/home/eye.gif" alt="eye">
+</div>
 
 
   
@@ -78,6 +80,17 @@
     });
   </script>
 
+
+  <script>
+    
+    const eye = document.querySelector('.eye');
+    document.addEventListener('mousemove', (event) => {
+      const x = (event.clientX / window.innerWidth) * 10;
+      const y = (event.clientY / window.innerHeight) * 10;
+      eye.style.transform = `translate(${x - 5}%, ${y - 5}%)`;
+    });
+
+  </script>
 
   <script>
     const body = document.body;
