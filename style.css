@@ -25,10 +25,17 @@ body {
     position: absolute;
     z-index: 10;
     transition: content .1s;
-    cursor: pointer;
-
 }
 
+.spacemail :hover {
+    cursor: pointer;
+    content: url('assets/img/home/ssm_thumb.gif');
+}
+
+.spacemail :active {
+    transition: scale .1s;
+    scale: 0.9;
+}
 
 
 
