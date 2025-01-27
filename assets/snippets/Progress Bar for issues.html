@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Bar for Issues</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: black;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+
+
+    .progress-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 232px;
+    }
+
+    .progress-label {
+      font-size: 14px;
+      color: white;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    .progress-percentage {
+      font-size: 14px;
+      color: white;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    .progress-bar {
+      position: relative;
+      flex-grow: 1;
+      height: 10px;
+      background-color: black;
+      border-radius: 2px;
+      outline: 2px solid black;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .progress-segment {
+      flex-grow: 1;
+      background-color: #8957e5; 
+      margin-right: 2.5px; 
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .progress-segment:first-child {
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    .progress-segment:last-child {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      margin-right: 0;
+    }
+
+    .progress-segment:not(.completed) {
+      background-color: #322a54;
+    }
+
+    
+
+  </style>
+</head>
+<body>
+  
+  <div class="progress-container">
+    <div class="progress-label" id="progress-label">0/0</div>
+    <div class="progress-bar" id="progress-bar"></div>
+    <div class="progress-percentage" id="progress-percentage">0%</div>
+  </div>
+
+  <script>
+    const totalIssues = 6;
+    const completedIssues = 2;
+
+    const percentage = totalIssues > 0 ? Math.round((completedIssues / totalIssues) * 100) : 0;
+    document.getElementById('progress-label').textContent = `${completedIssues}/${totalIssues}`;
+    document.getElementById('progress-percentage').textContent = `${percentage}%`;
+    const progressBar = document.getElementById('progress-bar');
+    progressBar.innerHTML = '';
+    for (let i = 0; i < totalIssues; i++) {
+      const segment = document.createElement('div');
+      segment.classList.add('progress-segment');
+      if (i < completedIssues) { segment.classList.add('completed');}
+      progressBar.appendChild(segment);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!--
+  <div class="fish">
+    <img src="img/fishie.gif" alt="fish">
+  </div>
+  <script>
+    const fish = document.querySelector('.fish');
+    document.addEventListener('mousemove', (event) => {
+      const x = (event.clientX / window.innerWidth) * 50;
+      const y = (event.clientY / window.innerHeight) * 50;
+      fish.style.transform = `translate(${x - 25}%, ${y - 25}%)`;
+    });
+  </script>
+
+
+   making the image hover effect yay 
+  <div class="hover" data-tilt style="width: 196px; height: 196px;">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXHFm49pEd2ASMu55DxyLl6_sCTShWr0CH_KQ5OVirZpqPIyRynPmTZu5DwChB895DkUzFLDGoV7suFC1hU59CARPGBTFV_fNeY0Ytuz0BTxHX3pvQCizcokA0SSL68ABlmJEd8NIk4UJj9juLjzT5dzsqHz0KDdAXF2tkL6vAV7Kq7K39od0EYiJOmKwK/s1600/tiny.gif"
+        alt="imagem">
+  </div>
+  -->
+
+
+  <style>
+    .eye {
+      display: grid;
+      place-items: center;
+      height: 20vh;
+      width: 20vw;
+      position: absolute;
+      z-index: 9;
+    }
+  </style>
+
+  <!-- eye and tests -->
+  <div class="eye">
+    <img src="assets/img/home/eye.gif" alt="eye">
+  </div>
+
+  <script>
+    // eye parallax movement
+    const eye = document.querySelector('.eye');
+    document.addEventListener('mousemove', (event) => {
+    const x = (event.clientX / window.innerWidth) * 10;
+    const y = (event.clientY / window.innerHeight) * 10;
+    eye.style.transform = `translate(${x - 5}%, ${y - 5}%)`;
+    });
+  </script>

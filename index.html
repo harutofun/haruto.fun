@@ -12,38 +12,25 @@
 <body>
 
 
-<!--
-  <div class="fish">
-    <img src="img/fishie.gif" alt="fish">
-  </div>
-  <script>
-    const fish = document.querySelector('.fish');
-    document.addEventListener('mousemove', (event) => {
-      const x = (event.clientX / window.innerWidth) * 50;
-      const y = (event.clientY / window.innerHeight) * 50;
-      fish.style.transform = `translate(${x - 25}%, ${y - 25}%)`;
-    });
-  </script>
 
+  <!-- status -->
+   <div class="status_div">
+    <div class="progress-container">
+      <div class="progress-label" id="progress-label">0/0</div>
+      <div class="progress-bar" id="progress-bar"></div>
+      <div class="progress-percentage" id="progress-percentage">0%</div>
+    </div>
+    <img class="status_issues" src="assets/img/home/status/status_4.png" alt="Status Issues">
+    <img class="status_gif" src="assets/img/home/status/status_nosignal.gif" alt="Status Gif" id="status_gif">
+   </div>
 
-   making the image hover effect yay 
-  <div class="hover" data-tilt style="width: 196px; height: 196px;">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXHFm49pEd2ASMu55DxyLl6_sCTShWr0CH_KQ5OVirZpqPIyRynPmTZu5DwChB895DkUzFLDGoV7suFC1hU59CARPGBTFV_fNeY0Ytuz0BTxHX3pvQCizcokA0SSL68ABlmJEd8NIk4UJj9juLjzT5dzsqHz0KDdAXF2tkL6vAV7Kq7K39od0EYiJOmKwK/s1600/tiny.gif"
-        alt="imagem">
-  </div>
-  -->
-
-<div class="spacemail" data-tilt>
+  <!-- super spacemail thumbnail -->
+  <div class="spacemail" data-tilt>
     <img src="assets/img/home/ssm_disk.gif" alt="spacemail">
-</div>
-
-
-<div class="eye">
-  <img src="assets/img/home/eye.gif" alt="eye">
-</div>
-
+  </div>
 
   
+  <!-- background hands -->
   <div class="hands" style="place-content: center;">
     <div class="hands_bottom">
       <img src="assets/img/home/hands_bottom.gif" alt="hands_bottom">
@@ -55,50 +42,8 @@
       <img src="assets/img/home/hands_top.gif" alt="hands_top">
     </div>
   </div>
-    
-  <script>
-    const hands_bottom = document.querySelector('.hands_bottom');
-    document.addEventListener('mousemove', (event) => {
-      const x = (event.clientX / window.innerWidth) * 1;
-      const y = (event.clientY / window.innerHeight) * 1;
-      hands_bottom.style.transform = `translate(${x - .5}%, ${y - .5}%)`;
-    });
 
-    const hands_middle = document.querySelector('.hands_middle');
-    document.addEventListener('mousemove', (event) => {
-      const x = (event.clientX / window.innerWidth) * 2;
-      const y = (event.clientY / window.innerHeight) * 2;
-      hands_middle.style.transform = `translate(${x - 1}%, ${y - 1}%)`;
-    });
-
-    const hands_top = document.querySelector('.hands_top');
-    document.addEventListener('mousemove', (event) => {
-      const x = (event.clientX / window.innerWidth) * 3;
-      const y = (event.clientY / window.innerHeight) * 3;
-      hands_top.style.transform = `translate(${x - 1.5}%, ${y - 1.5}%)`;
-    });
-  </script>
-
-
-  <script>
-    
-    const eye = document.querySelector('.eye');
-    document.addEventListener('mousemove', (event) => {
-      const x = (event.clientX / window.innerWidth) * 10;
-      const y = (event.clientY / window.innerHeight) * 10;
-      eye.style.transform = `translate(${x - 5}%, ${y - 5}%)`;
-    });
-
-  </script>
-
-  <script>
-    const body = document.body;
-    document.addEventListener('mousemove', (event) => {
-      const x = (event.clientX / window.innerWidth) * 50;
-      const y = (event.clientY / window.innerHeight) * 50;
-      body.style.backgroundPosition = `${30 - x}% ${30 - y}%`;
-    });
-  </script> <!-- background parallax -->
-  <script src="vanilla-tilt.js"></script> <!-- tilt code -->
+  <script type="text/javascript" src="script.js"></script> <!-- script-->
+  <script type="text/javascript" src="assets/libraries/vanilla-tilt.js"></script> <!-- tilt code -->
 </body>
 </html>

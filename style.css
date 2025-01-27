@@ -12,11 +12,102 @@ body {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     z-index: -1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: never;
 } /* pixelate the body and add background */
+@font-face {
+    font-family: 'uto-font';
+    src: url('assets/fonts/harutofun.ttf') format('truetype');
+} /* set my font */
+
+/* status */
+.status_div {
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 9;
+    top: 70px;
+    left: 10vw;
+}
+
+.status_gif {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 9;
+}
+
+.status_issues {
+    top: 165px;
+    left: 14px;
+    position: absolute;
+    z-index: 10;
+}
+
+.progress-container {
+    top: 15px;
+    left: 10px;
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    max-width: 177px;
+  }
+
+  .progress-label {
+    font-family: uto-font, sans-serif;
+    font-size: 10px;
+    color: white;
+    background-color: black;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  .progress-percentage {
+    font-family: uto-font, sans-serif;
+    font-size: 10px;
+    color: white;
+    background-color: black;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  .progress-bar {
+    position: relative;
+    flex-grow: 1;
+    height: 10px;
+    background-color: black;
+    border-radius: 2px;
+    outline: 1px solid black;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .progress-segment {
+    flex-grow: 1;
+    background-color: #8957e5; 
+    margin-right: 2.5px; 
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .progress-segment:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  .progress-segment:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    margin-right: 0;
+  }
+
+  .progress-segment:not(.completed) {
+    background-color: #322a54;
+  }
 
 
 
-
+/* super spacemail thumbnail */
 .spacemail {
     display: grid;
     place-items: center;
@@ -38,20 +129,9 @@ body {
 }
 
 
-
-.eye {
-    display: grid;
-    place-items: center;
-    height: 20vh;
-    width: 20vw;
-    position: absolute;
-    z-index: 9;
-}
-
-
-/* hands background */
-
+/* hands parallax background */
 .hands {
+    position: fixed;
     display: grid;
     place-items: center;
     height: 100vh;
