@@ -26,8 +26,8 @@ status_div.style.transform = `translate(${x - .5}%, ${y - .5}%)`;
 
 
 // progress bar
-const totalIssues = 6;
-const completedIssues = 1;
+const totalIssues = 18;
+const completedIssues = 11;
 const percentage = totalIssues > 0 ? Math.round((completedIssues / totalIssues) * 100) : 0;
 document.getElementById('progress-label').textContent = `${completedIssues}/${totalIssues}`;
 document.getElementById('progress-percentage').textContent = `${percentage}%`;
