@@ -26,13 +26,16 @@ body {
 
 /* bluesky */
 .bluesky_div {
-  font-family: uto-font, sans-serif;
-  font-size: 10px;
   z-index: 11;
   width: 200px;
   position: absolute;
   top: 70px;
   left: 70vw;
+}
+
+.bluesky_div * {
+  font-family: 'uto-font', serif !important;
+  font-size: 10px;
 }
 
 /* status container */

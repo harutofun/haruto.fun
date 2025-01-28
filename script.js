@@ -1,8 +1,5 @@
 //all the js code is here
 
-
-
-
 // status gif
 let status_gif_ = document.getElementById('status_gif');
 let status_gifs = [
