@@ -17,17 +17,10 @@ setInterval(function() {
     let random = Math.floor(Math.random() * status_gifs.length);
     status_gif_.src = status_gifs[random];
 }, 6000);
-const status_div = document.querySelector('.status_div');
-document.addEventListener('mousemove', (event) => {
-const x = (event.clientX / window.innerWidth) * 1;
-const y = (event.clientY / window.innerHeight) * 1;
-status_div.style.transform = `translate(${x - .5}%, ${y - .5}%)`;
-});
 
-
-// progress bar
-const totalIssues = 18;
-const completedIssues = 11;
+// tstaus progress bar
+const totalIssues = 6;
+const completedIssues = 1;
 const percentage = totalIssues > 0 ? Math.round((completedIssues / totalIssues) * 100) : 0;
 document.getElementById('progress-label').textContent = `${completedIssues}/${totalIssues}`;
 document.getElementById('progress-percentage').textContent = `${percentage}%`;

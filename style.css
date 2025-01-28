@@ -1,152 +1,177 @@
 html {
-    overflow: hidden;
-    -ms-overflow-style: none;
+  overflow: hidden;
+  -ms-overflow-style: none;
 } /* remove page scrolling */
 body::-webkit-scrollbar { 
-    display: none; 
+  display: none; 
 } /* hidde scroll */
 body {
-    position: relative;
-    background: url('assets/img/home/background.png') repeat center center;
-    background-size: auto;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-    z-index: -1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-smooth: never;
+  position: relative;
+  background: url('assets/img/home/background.png') repeat center center;
+  background-size: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  z-index: -1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
 } /* pixelate the body and add background */
 @font-face {
-    font-family: 'uto-font';
-    src: url('assets/fonts/harutofun.ttf') format('truetype');
+  font-family: 'uto-font';
+  src: url('assets/fonts/harutofun.ttf') format('truetype');
 } /* set my font */
 
-/* status */
+
+/** BODY **/
+
+/* bluesky */
+.bluesky_div {
+  font-family: uto-font, sans-serif;
+  font-size: 10px;
+  z-index: 11;
+  width: 200px;
+  position: absolute;
+  top: 70px;
+  left: 70vw;
+}
+
+/* status container */
 .status_div {
-    display: grid;
-    place-items: center;
-    position: relative;
-    z-index: 9;
-    top: 70px;
-    left: 10vw;
+  position: absolute;
+  width: 196px;
+  height: 196px;
+  z-index: 9;
+  display: grid;
+  place-items: center;
+  top: 70px;
+  left: 10vw;
 }
 
+/* status background gif */
 .status_gif {
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    z-index: 9;
+border-radius: 5px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: 9;
 }
 
+/* status issues image */
 .status_issues {
-    top: 165px;
-    left: 14px;
-    position: absolute;
-    z-index: 10;
+  top: 165px;
+  left: 14px;
+  position: absolute;
+  z-index: 10;
 }
 
+/* status progress container */
 .progress-container {
-    top: 15px;
-    left: 10px;
-    z-index: 10;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    width: 100%;
-    max-width: 177px;
-  }
+  top: 15px;
+  left: 10px;
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  max-width: 177px;
+}
 
-  .progress-label {
-    font-family: uto-font, sans-serif;
-    font-size: 10px;
-    color: white;
-    background-color: black;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  }
+/* status progress characteres */
+.progress-label {
+  font-family: uto-font, sans-serif;
+  font-size: 10px;
+  color: white;
+  background-color: black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
-  .progress-percentage {
-    font-family: uto-font, sans-serif;
-    font-size: 10px;
-    color: white;
-    background-color: black;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  }
+.progress-percentage {
+  font-family: uto-font, sans-serif;
+  font-size: 10px;
+  color: white;
+  background-color: black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
-  .progress-bar {
-    position: relative;
-    flex-grow: 1;
-    height: 10px;
-    background-color: black;
-    border-radius: 2px;
-    outline: 1px solid black;
-    display: flex;
-    overflow: hidden;
-  }
+/* status progress background */
+.progress-bar {
+  flex-grow: 1;
+  height: 10px;
+  background-color: black;
+  border-radius: 2px;
+  outline: 1px solid black;
+  display: flex;
+}
 
-  .progress-segment {
-    flex-grow: 1;
-    background-color: #8957e5; 
-    margin-right: 2px; 
-    transition: background-color 0.3s ease-in-out;
-  }
+/* status progress done */
+.progress-segment {
+  flex-grow: 1;
+  background-color: #8957e5; 
+  margin-right: 2px; 
+  transition: background-color 0.3s ease-in-out;
+}
 
-  .progress-segment:first-child {
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-  }
-  .progress-segment:last-child {
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    margin-right: 0;
-  }
+/* status progress border */
+.progress-segment:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.progress-segment:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  margin-right: 0;
+}
 
-  .progress-segment:not(.completed) {
-    background-color: #322a54;
-  }
+/* status progress to-do */
+.progress-segment:not(.completed) {
+  background-color: #322a54;
+}
 
 
 
 /* super spacemail thumbnail */
 .spacemail {
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    z-index: 10;
-    transition: content .1s;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 5;
+  transition: content .1s;
 }
 
 .spacemail :hover {
-    cursor: pointer;
-    content: url('assets/img/home/ssm_thumb.gif');
+  width: 315px;
+  height: 250px;
+  cursor: pointer;
+  content: url('assets/img/home/ssm_thumb.gif');
 }
 
 .spacemail :active {
-    transition: scale .1s;
-    scale: 0.9;
+  transition: scale .1s;
+  scale: 0.9;
 }
 
 
 /* hands parallax background */
 .hands {
-    position: fixed;
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    width: 100vw;
+  position: fixed;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 .hands_bottom{
-    position: absolute;
-    z-index: 1;
+  position: absolute;
+  z-index: 1;
 }
 .hands_middle{
-    position: absolute ;
-    z-index: 2;
+  position: absolute ;
+  z-index: 2;
 }
 .hands_top{
-    position: absolute ;
-    z-index: 3;
+  position: absolute ;
+  z-index: 3;
 }
 

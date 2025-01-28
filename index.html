@@ -4,18 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">]
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="style.css">
   <title>haruto.fun</title>
 </head>
 
 <body>
-
-
+  <!-- bluesky -->
+  <div class="bluesky_div" data-tilt data-tilt-full-page-listening data-tilt-reverse="true">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+    <bsky-embed
+      username="haruto.fun"
+      mode="dark"
+      limit="1"
+      link-target="_blank"
+      link-image="true"
+      disable-styles="false"
+      custom-styles=".border-slate-300 { border-color: black; }"
+    >
+    </bsky-embed>
+  </div>
 
   <!-- status -->
-   <div class="status_div">
+  <div class="status_div" data-tilt data-tilt-full-page-listening data-tilt-reverse="true">
     <div class="progress-container">
       <div class="progress-label" id="progress-label">0/0</div>
       <div class="progress-bar" id="progress-bar"></div>
@@ -23,16 +35,18 @@
     </div>
     <img class="status_issues" src="assets/img/home/status/status_4.png" alt="Status Issues">
     <img class="status_gif" src="assets/img/home/status/status_nosignal.gif" alt="Status Gif" id="status_gif">
-   </div>
+  </div>
+
+
 
   <!-- super spacemail thumbnail -->
   <div class="spacemail" data-tilt>
     <img src="assets/img/home/ssm_disk.gif" alt="spacemail">
   </div>
 
-  
+
   <!-- background hands -->
-  <div class="hands" style="place-content: center;">
+  <div class="hands">
     <div class="hands_bottom">
       <img src="assets/img/home/hands_bottom.gif" alt="hands_bottom">
     </div>
