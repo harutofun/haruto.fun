@@ -1,0 +1,45 @@
+
+
+
+  <div id="hidden-image" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;">
+    <img src="https://via.placeholder.com/150" alt="Imagem Assombração">
+  </div>
+  
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'PrintScreen') {
+        const hiddenImage = document.getElementById('hidden-image');
+        
+        // Torna a imagem visível
+        hiddenImage.style.display = 'block';
+  
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+<!-- SHOWING UP GHOST ON PRINT SCREEN -->
+<div id="hidden-image" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;">
+  <img src="https://via.placeholder.com/150" alt="image-hidden">
+</div>
+<script>
+  document.addEventListener('keyup', (e) => {
+      if (e.key == 'PrintScreen') {
+          const hiddenImage = document.getElementById('hidden-image');
+          
+          // turn image visible yay
+          hiddenImage.style.display = 'block';
+
+          setTimeout(() => {
+          hiddenImage.style.display = 'none';
+        }, 150); // 150ms
+      }
+  });
+</script>
+
