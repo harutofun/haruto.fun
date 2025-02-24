@@ -202,16 +202,17 @@ body {
 .spacemail {
   display: grid;
   place-items: center;
-  height: 100vh;
-  width: 100vw;
+  width: 315px;
+  height: 250px;
+  top: 35vh;
+  left: 41vw;
   position: absolute;
   z-index: 5;
-  transition: content .1s;
+  transition: content .1s top .1s left .1s;
 }
 
 .spacemail :hover {
-  width: 315px;
-  height: 250px;
+
   content: url('assets/img/home/ssm_thumb.gif');
 }
 
