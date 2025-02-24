@@ -14,7 +14,6 @@ body {
   z-index: -1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-smooth: never;
 } /* pixelate the body and add background */
 @font-face {
   font-family: 'uto-font';
@@ -26,17 +25,83 @@ body {
 
 /* bluesky */
 .bluesky_div {
-  z-index: 11;
-  width: 200px;
-  position: absolute;
+  z-index: 10;
+  position: fixed;
+  display: grid;
+  place-items: center;
   top: 70px;
-  left: 70vw;
+  left: 75vw;
 }
 
-.bluesky_div * {
-  font-family: 'uto-font', serif !important;
+/* bluesky embed */
+.bluesky_embed {
+  z-index: 15;
+  top: 30px;
+  left: -1px;
+  width: 230px;
+  position: absolute;
+}
+.bluesky_embed > * {
+  image-rendering: pixelated;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'uto-font', serif;
   font-size: 10px;
 }
+
+/* bluesky background */
+.bluesky_tab {
+  left: 0px;
+  top: 0px;
+  width: 320px;
+  height: 338px;
+  position: absolute;
+}
+.bluesky_tab_bg {
+  z-index: -10;
+  left: 10px;
+  top: -10px;
+  width: 320px;
+  height: 338px;
+  position: absolute;
+}
+.bluesky_embed img.w-14 {
+  width: 0rem;
+}
+
+/* steam button */
+.steam_button {
+  z-index: 17;
+  height: 70px;
+  width: 70px;
+  top: 115px;
+  left: -1px;
+  position: absolute;
+}
+
+.steam_button :hover {
+  cursor: pointer;
+  content: url('assets/img/home/steam_animated.gif');
+}
+
+/* itchio button */
+.itchio_button {
+  z-index: 17;
+  height: 70px;
+  width: 70px;
+  top: 195px;
+  left: 5px;
+  position: absolute;
+}
+
+.itchio_button :hover {
+  cursor: pointer;
+  content: url('assets/img/home/itchio_animated.gif');
+}
+
+
+
+
+
 
 /* status container */
 .status_div {
@@ -52,7 +117,7 @@ body {
 
 /* status background gif */
 .status_gif {
-border-radius: 5px;
+  border-radius: 5px;
   top: 0px;
   left: 0px;
   position: absolute;
@@ -111,18 +176,18 @@ border-radius: 5px;
 .progress-segment {
   flex-grow: 1;
   background-color: #8957e5; 
-  margin-right: 2px; 
+  margin-right: -1px; /* change this to -1 or 0 or 2 depending on the amount of tasks */
   transition: background-color 0.3s ease-in-out;
 }
 
 /* status progress border */
 .progress-segment:first-child {
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-top-left-radius: 4px; /* must be 2x the margin right */
+  border-bottom-left-radius: 4px;
 }
 .progress-segment:last-child {
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   margin-right: 0;
 }
 
@@ -147,7 +212,6 @@ border-radius: 5px;
 .spacemail :hover {
   width: 315px;
   height: 250px;
-  cursor: pointer;
   content: url('assets/img/home/ssm_thumb.gif');
 }
 

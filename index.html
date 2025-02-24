@@ -12,22 +12,43 @@
 
 <body>
   <!-- bluesky -->
-  <div class="bluesky_div" data-tilt data-tilt-full-page-listening data-tilt-reverse="true">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
-    <bsky-embed
-      username="haruto.fun"
-      mode="dark"
-      limit="1"
-      link-target="_blank"
-      link-image="true"
-      disable-styles="false"
-      custom-styles=".border-slate-300 { border-color: black; }"
-    >
-    </bsky-embed>
+  <div class="bluesky_div">
+    <div class="bluesky_front">
+      <div class="bluesky_embed">
+        <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+        <bsky-embed
+          username="haruto.fun"
+          mode="dark"
+          limit="1"
+          link-target="_blank"
+          link-image="true"
+          disable-styles="false"
+          custom-styles=".border-slate-300 { border-color: black; }"
+        >
+        </bsky-embed>
+      </div>
+      <div class="bluesky_tab">
+        <img src="assets/img/home/bluesky-tab.png" alt="bluesky-tab">
+      </div>
+    </div>
+    <div class="bluesky_tab_bg">
+      <img src="assets/img/home/bluesky-tab-bg.png" alt="bluesky-tab-bg">
+    </div>
+    <div class="steam_button">
+      <a href="https://store.steampowered.com/dev/harutofun" target="_blank">
+        <img src="assets/img/home/steam_still.png" alt="steam_button">
+      </a>
+    </div>
+    <div class="itchio_button">
+      <a href="https://harutofun.itch.io/" target="_blank">
+        <img src="assets/img/home/itchio_still.png" alt="itchio_button">
+      </a>
+    </div>
   </div>
 
+
   <!-- status -->
-  <div class="status_div" data-tilt data-tilt-full-page-listening data-tilt-reverse="true">
+  <div class="status_div">
     <div class="progress-container">
       <div class="progress-label" id="progress-label">0/0</div>
       <div class="progress-bar" id="progress-bar"></div>
@@ -40,10 +61,11 @@
 
 
   <!-- super spacemail thumbnail -->
-  <div class="spacemail" data-tilt>
-    <img src="assets/img/home/ssm_disk.gif" alt="spacemail">
-  </div>
-
+   <a class="spacemail_button" href="https://store.steampowered.com/app/1870400/Super_SpaceMail/" target="_blank">
+    <div class="spacemail" data-tilt>
+      <img src="assets/img/home/ssm_disk.gif" alt="spacemail">
+    </div>
+  </a>
 
   <!-- background hands -->
   <div class="hands">
