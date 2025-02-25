@@ -40,7 +40,7 @@ body {
   left: -1px;
   width: 290px;
   max-height: 250px;
-  overflow: hidden;
+  overflow: hidden; /* hide the overflow */
   position: absolute;
 }
 .bluesky_embed > * {
