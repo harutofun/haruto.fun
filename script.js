@@ -1,5 +1,10 @@
 //all the js code is here
+if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+  window.location.href = "https://linktr.ee/haruto.fun";
+}
 
+
+//--------------------  BODY  --------------------//
 // status gif
 let status_gif_ = document.getElementById('status_gif');
 let status_gifs = [
@@ -31,67 +36,23 @@ for (let i = 0; i < totalIssues; i++) {
 }
 
 // status container parallax movement
-const status_div = document.querySelector('.status_div');
-document.addEventListener('mousemove', (event) => {
-const x = (event.clientX / window.innerWidth) * 2;
-const y = (event.clientY / window.innerHeight) * 2;
-status_div.style.transform = `translate(${x - 1}%, ${y - 1}%)`;
-});
-
+applyParallaxEffect('.status_div', 2, 1);
 
 
 // bluesky container parallax movement
-const bluesky_embed = document.querySelector('.bluesky_embed');
-document.addEventListener('mousemove', (event) => {
-const x = (event.clientX / window.innerWidth) * 2;
-const y = (event.clientY / window.innerHeight) * 2;
-bluesky_embed.style.transform = `translate(${x - 1}%, ${y - 1}%)`;
-});
-const bluesky_tab = document.querySelector('.bluesky_tab');
-document.addEventListener('mousemove', (event) => {
-const x = (event.clientX / window.innerWidth) * 2;
-const y = (event.clientY / window.innerHeight) * 2;
-bluesky_tab.style.transform = `translate(${x - 1}%, ${y - 1}%)`;
-});
-const bluesky_tab_bg = document.querySelector('.bluesky_tab_bg');
-document.addEventListener('mousemove', (event) => {
-const x = (event.clientX / window.innerWidth) * 4;
-const y = (event.clientY / window.innerHeight) * 4;
-bluesky_tab_bg.style.transform = `translate(${x - 2}%, ${y - 2}%)`;
-});
-const steam_button = document.querySelector('.steam_button');
-document.addEventListener('mousemove', (event) => {
-const x = (event.clientX / window.innerWidth) * 4;
-const y = (event.clientY / window.innerHeight) * 4;
-steam_button.style.transform = `translate(${x - 2}%, ${y - 2}%)`;
-});
-const itchio_button = document.querySelector('.itchio_button');
-document.addEventListener('mousemove', (event) => {
-const x = (event.clientX / window.innerWidth) * 5;
-const y = (event.clientY / window.innerHeight) * 5;
-itchio_button.style.transform = `translate(${x - 2.5}%, ${y - 2.5}%)`;
-});
+applyParallaxEffect('.bluesky_embed', 2, 1);
+applyParallaxEffect('.bluesky_tab', 2, 1);
+applyParallaxEffect('.bluesky_tab_bg', 4, 2);
+applyParallaxEffect('.steam_button', 4, 2);
+applyParallaxEffect('.itchio_button', 5, 2.5);
+applyParallaxEffect('.spotify_app', 2, 1);
 
 
 // hands parallax movement
-const hands_bottom = document.querySelector('.hands_bottom');
-document.addEventListener('mousemove', (event) => {
-const x = (event.clientX / window.innerWidth) * 1;
-const y = (event.clientY / window.innerHeight) * 1;
-hands_bottom.style.transform = `translate(${x - .5}%, ${y - .5}%)`;
-});
-const hands_middle = document.querySelector('.hands_middle');
-document.addEventListener('mousemove', (event) => {
-const x = (event.clientX / window.innerWidth) * 2;
-const y = (event.clientY / window.innerHeight) * 2;
-hands_middle.style.transform = `translate(${x - 1}%, ${y - 1}%)`;
-});
-const hands_top = document.querySelector('.hands_top');
-document.addEventListener('mousemove', (event) => {
-const x = (event.clientX / window.innerWidth) * 3;
-const y = (event.clientY / window.innerHeight) * 3;
-hands_top.style.transform = `translate(${x - 1.5}%, ${y - 1.5}%)`;
-});
+applyParallaxEffect('.hands_bottom', 1, .5);
+applyParallaxEffect('.hands_middle', 2, 1);
+applyParallaxEffect('.hands_top', 3, 1.5);
+
 
 
 // background parallax movement
