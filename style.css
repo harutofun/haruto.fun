@@ -118,8 +118,8 @@ body {
   z-index: 9;
   display: grid;
   place-items: center;
-  top: 70px;
-  left: 10vw;
+  top: -30px;
+  left: 5vw;
 }
 
 /* status background gif */
@@ -201,6 +201,40 @@ body {
 /* status progress to-do */
 .progress-segment:not(.completed) {
   background-color: #322a54;
+}
+
+/* status turn card */
+.status_front, .status_back {
+  position: absolute;
+  width: 196px;
+  height: 196px;
+  transition: transform 0.3s;
+  backface-visibility: hidden;
+}
+.status_front {
+  background: black; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.status_back {
+  background: black; 
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.status_div:hover .status_front {
+  transform: rotateY(180deg);
+}
+.status_div:hover .status_back {
+  transform: rotateY(360deg);
+}
+
+.status_div:active .status_back{
+  transition: scale .1s;
+  scale: 0.9;
 }
 
 
