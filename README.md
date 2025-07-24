@@ -1,6 +1,9 @@
 ## About this project
 This is my main website.  
-My first idea with this website was to hide a game that would be made using its native language (HTML/CSS/JS), but this is still under test at the moment. If I find it too difficult to proceed, I'll add an iframe with the game I planned for this site, which will then be made using Godot Engine. Whatever my approach toward this matter, this website will contain a free game since it's something I always wanted to provide my followers as a gift for their support.  
+My initial idea for this website was to hide a game that would be created using its native language (HTML/CSS/JS), but this is still under development at the moment. If I find it too difficult to proceed, I'll add an iframe with the game I planned for this site, which will then be made using Godot Engine. Whatever my approach toward this matter, this website will contain a free game since it's something I always wanted to provide my followers as a gift for their support. 
+
+> ✨Update!  
+> After a long time trying to make a game here, I realized it's better to stick with making actual games using my favorite engines (improving in them to make even better games), but I'll still add little easter eggs and hidden gifts here! Thanks for the support as always. 
 
 
 ## Libraries Used
