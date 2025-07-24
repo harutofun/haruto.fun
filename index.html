@@ -9,9 +9,11 @@
   <link rel="stylesheet" href="style.css">
   <title>haruto.fun</title>
 
+  <!-- scripts -->
+  <script type="text/javascript" src="assets/js/hiddenimage.js"></script>
+
   <!-- favicon -->
   <link rel="icon" type="image/png" href="assets/img/favicon/favicon.png" sizes="27x27">
-
   <link rel="manifest" href="assets/img/favicon/site.webmanifest">
   <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#000000">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -38,8 +40,14 @@
 </head>
 
 <body>
-
-
+  <script>
+    setupHiddenImage({
+      imageURL: 'assets/img/home/eye.gif',
+      position: { top: '20%', left: '60%' },
+      shouldDisappear: true,
+      timeout: 900
+    });
+  </script>
 
   <!-- bluesky -->
   <div class="bluesky_div">
@@ -79,7 +87,7 @@
   <!-- spotify -->
   <div class="spotify_app">
     <iframe
-      src="https://open.spotify.com/embed/track/4SRiQVFPS19RqTmq5J2Iah?utm_source=generator&theme=0"
+      src="https://open.spotify.com/embed/track/57ZAuvrAtQPPtFkku3WDYI?utm_source=generator&theme=0"
       width="100%"
       height="120"
       frameborder="0"
