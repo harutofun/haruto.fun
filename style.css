@@ -283,6 +283,7 @@ body {
 
 .reserved_rights_nav {
   position: fixed;
+  text-align: right;
   bottom: 5px;
   right: 5px;
   background-color: rgba(0, 0, 0, 0.7);
