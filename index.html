@@ -49,6 +49,37 @@
     });
   </script>
 
+
+
+    <!-- Patreon Floating Button -->
+  <style>
+    #patreon-floating {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 10px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      z-index: 9999;
+      transition: all 0.2s ease;
+    }
+    #patreon-floating:hover {
+      background-color: #FF424D;
+      transform: scale(1.05);
+    }
+  </style>
+
+  <a id="patreon-floating" href="https://www.patreon.com/harutofun" target="_blank">
+    ❤️ Patreon
+  </a>
+
+
   <!-- bluesky -->
   <div class="bluesky_div">
     <div class="bluesky_front">
@@ -138,15 +169,7 @@
     </div>
   </div>
 
-  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script> <!-- kofi -->
-  <script>
-    kofiWidgetOverlay.draw('harutofun', {
-      'type': 'floating-chat',
-      'floating-chat.donateButton.text': 'Offering',
-      'floating-chat.donateButton.background-color': '#000000',
-      'floating-chat.donateButton.text-color': '#fff'
-    });
-  </script> <!-- kofi -->
+
   <div class="reserved_rights_nav"> <!-- rights -->
     <p>dev@haruto.fun</p>
     <p>All rights reserved © 2025 haruto.fun</p>
