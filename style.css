@@ -296,7 +296,7 @@ body {
 }
 
 /* Patreon */
-#patreon {
+.patreon {
   position: fixed;
   bottom: 20px;
   left: 20px;
@@ -312,7 +312,7 @@ body {
   z-index: 9999;
   transition: all 0.2s ease;
 }
-#patreon:hover {
+.patreon:hover {
   background-color: #FF424D;
   transform: scale(1.05);
 }
