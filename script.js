@@ -18,7 +18,8 @@ applyParallaxEffect('.bluesky_tab_bg', 4, 2);
 applyParallaxEffect('.steam_button', 4, 2);
 applyParallaxEffect('.itchio_button', 5, 2.5);
 applyParallaxEffect('.spotify_app', 2, 1);
-
+applyParallaxEffect('.discord_widget_tiny', 2, 1);
+applyParallaxEffect('.discord_widget_button', 4, 2.5);
 
 // hands parallax movement
 applyParallaxEffect('.hands_bottom', 1, .5);
