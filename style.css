@@ -91,7 +91,7 @@ body {
   top: 670px;
   right: 170px;
   width: 400px;
-  max-height: 250px;
+  max-height: 330px;
   overflow: hidden; /* hide the overflow */
   position: absolute;
   border: .25px solid rgb(0, 0, 0);
