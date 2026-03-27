@@ -25,6 +25,7 @@ applyParallaxEffect('.discord_widget_button', 4, 2.5);
 applyParallaxEffect('.hands_bottom', 1, .5);
 applyParallaxEffect('.hands_middle', 2, 1);
 applyParallaxEffect('.hands_top', 3, 1.5);
+applyParallaxEffect('.hands_spiral', 4, 2);
 
 
 
